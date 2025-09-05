@@ -1,1 +1,199 @@
 @charset "urf-8";
+/*  */
+img {
+  display: block;
+}
+/*  */
+.bestscene-wrap {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+.best-mainImg {
+  width: 100%;
+  height: 100%;
+}
+.best-mainImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.best-txt-bg {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(17, 17, 17, 0.6) 40%,
+    rgba(17, 17, 17, 0.3) 70%,
+    rgba(17, 17, 17, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* txt box */
+.best-txt-box {
+  width: 78%;
+  padding: 20% 0 0 7%;
+  display: none;
+}
+.best-txt-box.show {
+  display: block;
+}
+.best-txt-box h1 {
+  font: var(--font-section-title);
+}
+.best-txt-box h3 {
+  font: var(--font-subtitle);
+  margin: 16px 0 60px 0;
+}
+.best-txt-box p {
+  font: var(--font-dscr-regular);
+}
+
+/* swiper */
+.bestScene-slide {
+  width: 57.5%;
+  height: 18%;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+}
+.bestScene-slide .swiper-slide {
+  border-radius: 24px;
+  overflow: hidden;
+}
+.bestScene-slide .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* pagenation */
+.best-pagenation {
+  width: 100%;
+  display: flex;
+  gap: 2%;
+  /* background-color: #ddd; */
+  justify-content: center;
+  position: absolute;
+  padding: 1% 0;
+  bottom: 0;
+}
+.best-pagenation button {
+  all: unset;
+  cursor: pointer;
+}
+.best-pagenation button img {
+  display: block;
+}
+
+/* play */
+.best-play-box {
+  width: 75%;
+  padding: 10% 0 0 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.best-play-box .button-box {
+  display: flex;
+  gap: 3%;
+}
+.best-play-box .button-box i {
+  font-size: 50px;
+  cursor: pointer;
+}
+.play-title {
+  font: var(--font-dscr-regular);
+}
+.play-stick {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* screen and dolby */
+.screen-wrap {
+  width: 100vw;
+  background-color: #111;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  padding-top: 200px;
+}
+.screen-title h1 {
+  font: var(--font-section-title);
+  padding-bottom: 200px;
+}
+#screen-iphone {
+  width: 30%;
+  margin: auto;
+  padding-bottom: 200px;
+  filter: brightness(80%);
+}
+.screen-cinema {
+  width: 100%;
+}
+#screen-cinema {
+  width: 100%;
+}
+.screen-txt {
+  width: 100%;
+  height: 550px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.screen-txt p {
+  font: var(--font-section-title);
+  color: #fff;
+}
+.screen-txt span {
+  color: var(--color-main);
+}
+
+/* homespeaker */
+.screen-speaker-wrap {
+  width: 100vw;
+  background-color: #111;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+}
+.screen-homes {
+  padding: 200px;
+  width: 100%;
+  background: url(../img/bestscene/homespeaker-bg.png) center / 100% no-repeat;
+}
+.screen-homes h1 {
+  font: var(--font-section-title);
+  margin-bottom: 200px;
+}
+#homespeaker {
+  width: 50%;
+  margin: auto;
+}
+.screen-dolby {
+  width: 100%;
+}
+#dolby {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+.screen-dolby-txt{
+  margin-bottom: 0;
+}
