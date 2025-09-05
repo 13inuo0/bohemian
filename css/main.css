@@ -41,8 +41,8 @@ a {
   /*  */
   /* font size */
 
-  --font-section-title: 600 64px;
-  --font-subtitle: bold 38px;
-  --font-dscr-regular: 500 24px;
-  --font-dscr-small: 400 16px;
+  --font-section-title: 600 64px "Poppins", sans-serif;
+  --font-subtitle: bold 38px "Poppins", sans-serif;
+  --font-dscr-regular: 500 24px "Poppins", sans-serif;
+  --font-dscr-small: 400 16px "Poppins", sans-serif;
 }

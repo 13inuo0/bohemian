@@ -1,1 +1,118 @@
 @charset "urf-8";
+/* 노래 라디오 투표 폼 */
+.voteRadio-wrap {
+  padding: 150px 0;
+  background-color: #111111;
+}
+.voteRadio-wrap form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  margin: auto;
+}
+.voteRadio-wrap input[type="radio"] {
+  display: none;
+}
+.voteRadio-wrap input[type="radio"]:checked + label {
+  background-color: #fdc702;
+}
+.voteRadio-wrap label {
+  display: inline-block;
+  position: relative;
+  background-color: #fff0c4;
+  border-radius: 50px;
+  width: 500px;
+  height: 80px;
+  margin: auto;
+  cursor: pointer;
+  color: #111111;
+  padding: 30px 50px;
+  margin-bottom: 25px;
+}
+#voteBtn1 {
+  width: 500px;
+  height: 70px;
+  border: none;
+  border-radius: 50px;
+  font: 400 16px "Poppins", sans-serif;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #fdc702;
+  cursor: pointer;
+}
+/* 노래 투표 결과 */
+.voteQ-wrap {
+  width: 100%;
+  padding: 150px 0;
+  background-color: #111111;
+}
+.vote-Qtxt {
+  width: 600px;
+  margin: auto;
+  padding-left: 43px;
+  padding-bottom: 80px;
+  color: aliceblue;
+}
+.voteSection {
+  font: bold 38px "Poppins", sans-serif;
+  padding-bottom: 20px;
+}
+.voteQuestion {
+  font: 300 38px "Poppins", sans-serif;
+}
+/* 그래프 디자인 */
+#voteGraph-wrap {
+  width: 500px;
+  margin: auto;
+}
+#voteGraph-wrap li {
+  padding-bottom: 25px;
+}
+.voteGraph-bg {
+  position: relative;
+}
+.voteGraph {
+  width: 100%;
+  height: 80px;
+  appearance: none;
+}
+/* 크롬, 사파리 */
+.voteGraph::-webkit-progress-bar {
+  background: #fff0c4;
+  border-radius: 50px;
+}
+.voteGraph::-webkit-progress-value {
+  background: linear-gradient(90deg, #fdc702, #fdc702);
+  border-radius: 50px;
+  transition: width 1.5s ease; /* ← 부드럽게 채워지는 효과 */
+}
+/* 파이어폭스 */
+.voteGraph::-moz-progress-bar {
+  background: linear-gradient(90deg, #fdc702, #fdc702);
+  border-radius: 50px;
+  transition: width 1.5s ease;
+}
+.song-title-txt {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font: 400 16px "Poppins", sans-serif;
+  color: #111111;
+}
+#voteBtn {
+  width: 100%;
+  height: 70px;
+  border: none;
+  border-radius: 50px;
+  font: 400 16px "Poppins", sans-serif;
+  margin-top: 60px;
+  background-color: #fdc702;
+  cursor: pointer;
+}
