@@ -50,7 +50,7 @@ body {
   border-radius: 20px;
   transform: rotateY(180deg);
   transition: transform 0.5s;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* 이미지 스타일링 */
@@ -60,38 +60,33 @@ body {
   left: 0;
   width: 100%;
   display: block;
-    height: 420px;
+  height: 420px;
   object-fit: cover;
   transition: opacity 0.5s;
-   transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-
 
 /* 초기 이미지 (앞면) */
 .card-image.front {
   opacity: 1;
-         transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* 확장 시 보여질 이미지 (뒷면) */
 .card-image.back {
   /* display: none; */
   opacity: 0;
-       transform: rotateY(0deg);
-
+  transform: rotateY(0deg);
 }
 
 /* 확장 상태에서 이미지 전환 */
 .card.expand .card-image.front {
   /* display: none; */
   opacity: 0;
-  
 }
-
 
 .card.expand .card-image.back {
   opacity: 1;
-
 }
 
 .rotate {
@@ -102,9 +97,3 @@ body {
   flex: 10;
   z-index: 10;
 }
-
-
-
-
-
-

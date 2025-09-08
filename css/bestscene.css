@@ -91,7 +91,9 @@ img {
 .best-pagenation button img {
   display: block;
 }
-
+.best-pagenation button img:hover {
+  filter: brightness(70%);
+}
 /* play */
 .best-play-box {
   width: 75%;
@@ -107,6 +109,9 @@ img {
 .best-play-box .button-box i {
   font-size: 50px;
   cursor: pointer;
+}
+.bestactive{
+  color: var(--color-main);
 }
 .play-title {
   font: var(--font-dscr-regular);
