@@ -63,27 +63,27 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <!-- 영역별 css -->
-<link rel="stylesheet" href="./css/header.css">
-<link rel="stylesheet" href="./css/count_about.css">
-<link rel="stylesheet" href="./css/cast.css">
-<link rel="stylesheet" href="./css/bestscene.css">
-<link rel="stylesheet" href="./css/screen_sound.css">
-<link rel="stylesheet" href="./css/song_voting.css.css">
-<link rel="stylesheet" href="./css/review.css">
-<link rel="stylesheet" href="./css/event_footer.css">
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/count_about.css" />
+    <link rel="stylesheet" href="./css/cast.css" />
+    <link rel="stylesheet" href="./css/bestscene.css" />
+    <link rel="stylesheet" href="./css/screen_sound.css" />
+    <link rel="stylesheet" href="./css/song_voting.css.css" />
+    <link rel="stylesheet" href="./css/review.css" />
+    <link rel="stylesheet" href="./css/event_footer.css" />
 
     <!-- js -->
     <script src="./js/jquery-1.12.3/"></script>
-   
+
     <!-- 영역별 js -->
-<script src="js/header.js"></script>
-<script src="js/count_about.js"></script>
-<script src="js/cast.js"></script>
-<script src="js/bestscene.js"></script>
-<script src="js/screen_sound.js"></script>
-<script src="js/song_voting.js"></script>
-<script src="js/review.js"></script>
-<script src="js/event_footer.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/count_about.js"></script>
+    <script src="js/cast.js"></script>
+    <script src="js/bestscene.js"></script>
+    <script src="js/screen_sound.js"></script>
+    <script src="js/song_voting.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/event_footer.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 폰트어썸 -->
@@ -97,7 +97,54 @@
   </head>
   <body>
     <!-- 상단 -->
+    <header class="header">
+      <div class="header-bg"></div>
+      <!-- header-box -->
+      <div class="header-box">
+        <!-- 로고 -->
+        <a href="#" class="header-logo">
+          <img
+            src="img/header/web-app-manifest-192x192.png"
+            alt="mini-project"
+          />
+        </a>
+        <!-- 메뉴 -->
+        <nav class="header-nav">
+          <ul class="header-topmenu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OVERVIEW</a></li>
+            <li><a href="#">CAST</a></li>
+            <li><a href="#">PHOTO</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">SHOP</a></li>
+          </ul>
+        </nav>
+        <!-- tiket -->
+        <button class="header-ticket">Get ticket</button>
+      </div>
+    </header>
+    <div class="header-gif">
+      <img src="img/header/intro (1).webp" alt="gif" />
+      <!-- 예매하기 버튼 -->
+      <button class="header-button">예매하기 ></button>
+    </div>
+
     <!-- 카운트다운 및 영화소개 -->
+    <div class="header-count-img">
+      <h1 id="headline">9월 1일(월) 저녁 9시 재개봉</h1>
+      <img src="img/count_about/Rectangle 118.png" alt="count" />
+    </div>
+    <div class="header-container">
+      <div class="countdown">
+        <ul>
+          <li><a href="#">Days</a></li>
+          <li><a href="#">Hours</a></li>
+          <li><a href="#">Minutes</a></li>
+          <li><a href="#">Seconds</a></li>
+        </ul>
+      </div>
+    </div>
+
     <!-- CAST -->
     <!-- 명장면 다시보기 -->
     <!-- 스크린 및 돌비 사운드  -->
