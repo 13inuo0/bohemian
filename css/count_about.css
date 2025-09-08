@@ -1,1 +1,47 @@
 @charset "urf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  width: 100%;
+}
+.header-container{
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+#headline{
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  color: #b78017;
+}
+.countdown > li {
+ display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+.countdown > li > a{
+   display: block;
+  font-size: 4.5rem;
+}
+
+
+
+
+
