@@ -1,15 +1,26 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Permanent Marker", cursive;
+  background: #000;
   color: #fff;
 }
 
-.cast-wrap {
-  background-color: #111;
-  width: 100%;
-  min-height: 100vh;
+.card-container {
+  position: relative;
+  width: 1200px;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 20px;
 }
 
 /* cast title */
@@ -21,96 +32,76 @@ body {
   font-size: 35px;
 }
 
-.cast-img-wrap {
-  max-width: 1200px;
+.card {
+  position: relative;
+  flex: 1;
+  perspective: 500px;
+  transition: flex 0.5s;
+}
+
+.card-inner {
+  position: relative;
   width: 100%;
-  margin: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
+  color: #000;
+  border-radius: 20px;
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+  overflow: hidden; 
 }
 
-.cast-card {
-  position: relative;
-  overflow: hidden;
-   text-align: center;
-  /* flex: 1 1 200px; */
-  /* width: calc(100% -6% /4); */
-  flex: 1;
-}
-
-.cast-card:hover .cast-text {
-  opacity: 0;
-}
-
-/* card hover 할 때 */
-.cast-card:hover .img-hover {
-  opacity: 1;
-}
-
-.cast-card:hover .cast-card{
-  width: 100%;
-}
-
-.cast-card:hover .cast-img img:not(.img-hover){
-   opacity:0; 
-}
-
-.cast-img{
-  position: relative;
-}
-
-.cast-img img {
-  display: block;
-  width: 100%;
-  height: 380px;
-    height: auto;
-  /* aspect-ratio: 3/4; */
-}
-
-.cast-img .img-hover {
+/* 이미지 스타일링 */
+.card-image {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.cast-img img:not(.img-hover){
-   transition: opacity 0.5s ease; 
-}
-
-/* 소개 사진 */
-
-
-/* cast text */
-.cast-text {
-  opacity: 1;
-  transition: opacity 0.25s ease;
-  margin-top: -5px;
-  position: absolute;
-  top: 12px;
+  top: 0;
   left: 0;
-  right: 0;
-  padding: 0 12px;
-  text-align: center;
-  color: #fff;
-}
-
-.cast-text > p {
-  font-family: "Permanent Marker", cursive;
-  font-size: 20px;
-  line-height: 1.05;
-}
-
-.cast-text > span {
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  line-height: 1.05;
+  width: 100%;
   display: block;
-  margin-top: 2px;
+    height: 420px;
+  object-fit: cover;
+  transition: opacity 0.5s;
+   transform: rotateY(180deg);
 }
 
+
+/* 초기 이미지 (앞면) */
+.card-image.front {
+  opacity: 1;
+         transform: rotateY(180deg);
+}
+
+/* 확장 시 보여질 이미지 (뒷면) */
+.card-image.back {
+  /* display: none; */
+  opacity: 0;
+       transform: rotateY(0deg);
+
+}
+
+/* 확장 상태에서 이미지 전환 */
+.card.expand .card-image.front {
+  /* display: none; */
+  opacity: 0;
+  
+}
+
+
+.card.expand .card-image.back {
+  opacity: 1;
+
+}
+
+.rotate {
+  transform: rotateY(0deg);
+}
+
+.expand {
+  flex: 10;
+  z-index: 10;
+}
 
 
 
