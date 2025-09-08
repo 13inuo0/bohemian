@@ -3,6 +3,10 @@
 .voteRadio-wrap {
   padding: 150px 0;
   background-color: #111111;
+  display: block;
+}
+.voteRadio-wrap.activeVote {
+  display: none;
 }
 .voteRadio-wrap form {
   display: flex;
@@ -29,6 +33,7 @@
   color: #111111;
   padding: 30px 50px;
   margin-bottom: 25px;
+  font: 400 16px "Poppins", sans-serif;
 }
 #voteBtn1 {
   width: 500px;
@@ -46,6 +51,10 @@
   width: 100%;
   padding: 150px 0;
   background-color: #111111;
+  display: none;
+}
+.voteQ-wrap.activeVote {
+  display: block;
 }
 .vote-Qtxt {
   width: 600px;
@@ -113,6 +122,6 @@
   border-radius: 50px;
   font: 400 16px "Poppins", sans-serif;
   margin-top: 60px;
-  background-color: #fdc702;
+  background-color: #fff0c4;
   cursor: pointer;
 }
