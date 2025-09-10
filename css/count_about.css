@@ -1,47 +1,126 @@
 @charset "urf-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: #333;
-}
-img {
+
+.header-count-img {
   width: 100%;
+  position: relative;
+  background-color: red;
 }
-.header-container{
-  color: #333;
-  margin: 0 auto;
+.header-count-img > img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.count-content {
+  width: 80%;
+  max-width: 1200px;
+  /* background-color: #000000; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: aquamarine; */
   text-align: center;
 }
-#headline{
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  text-align: center;
+/* 재계봉 */
+#headline {
   font-weight: bold;
-  letter-spacing: .125rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
   color: #b78017;
+  /* font-size: 64px; */
+  font-size: clamp(20px, 5vw, 64px);
 }
-.countdown > li {
- display: inline-block;
-  font-size: 1.5em;
+/* 카운트다운 */
+#countdown {
+  width: 100%;
+
+  color: #fff;
+  text-align: center;
+  /* background-color: red; */
+}
+#countdown ul {
+  margin-top: 10%;
+  
+}
+#countdown li {
+  display: inline-block;
+  font-size: clamp(12px, 2vw, 16px);
   list-style-type: none;
   padding: 1em;
   text-transform: uppercase;
 }
-.countdown > li > a{
-   display: block;
-  font-size: 4.5rem;
+#countdown li span {
+  display: block;
+  font-size: clamp(20px, 5vw, 64px);
 }
 
-
-
-
-
+.countdown > li > span {
+  display: block;
+  font-size: 4.5rem;
+  color: red;
+}
+/* 예매하기 버튼 */
+.count-button {
+  display: block;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 18px 120px;
+  border: none;
+  border-radius: 15px;
+  margin: 10% auto;
+  background-color: #b78017;
+  color: #111111;
+}
+/* 영화소개 */
+.movie-card {
+  width: 85%;
+  margin: 10% auto;
+  background-color: #d8d8d8;
+  opacity: 87%;
+  display: flex;
+  top: 80%;
+  left: 0;
+  gap: 5%;
+  padding: 3%;
+  text-align: left;
+  border-radius: 25px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+}
+.movie-card-left {
+  width: 60%;
+  
+  padding: 8% 0;
+}
+.movie-card-right {
+  width: 40%;
+  
+}
+.card-right-img {
+  width: 100%;
+  height: 100%;
+}
+.movie-card-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
+/* 카드 폰트 칼라 */
+.card-title {
+  font-size: 38px;
+  color: #b78017;
+}
+h2 {
+  font-size: 20px;
+  color: #b78017;
+}
+.card-text {
+  font-size: 20px;
+  color: #111111;
+  padding-top: 3%;
+}
+.card-text-itr {
+  font-size: 27px;
+  color: #b78017;
+  padding-top: 3%;
+}
