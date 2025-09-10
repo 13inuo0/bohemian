@@ -1,7 +1,13 @@
 @charset "urf-8";
 /*  */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 img {
   display: block;
+  width: 100%;
 }
 /*  */
 .bestscene-wrap {
@@ -11,8 +17,26 @@ img {
   color: #fff;
 }
 .best-mainImg {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+}
+.best-mainImg::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 20%,
+    transparent 80%,
+    black 100%
+  );
 }
 .best-mainImg img {
   width: 100%;
@@ -40,6 +64,7 @@ img {
   width: 78%;
   padding: 20% 0 0 7%;
   display: none;
+  /* background-color: #fff; */
 }
 .best-txt-box.show {
   display: block;
@@ -101,6 +126,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* background-color: #ddd; */
 }
 .best-play-box .button-box {
   display: flex;
@@ -110,7 +136,7 @@ img {
   font-size: 50px;
   cursor: pointer;
 }
-.bestactive{
+.bestactive {
   color: var(--color-main);
 }
 .play-title {
@@ -121,20 +147,40 @@ img {
   height: 10px;
   border-radius: 5px;
   background-color: #fff;
+  position: relative;
+}
+.play-progress {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  max-width: 100%;
+  border-radius: 5px;
+  background-color: var(--color-main);
+  transition: all 0.1s linear;
 }
 
 /* screen and dolby */
 .screen-wrap {
   width: 100vw;
-  background-color: #111;
+  height: 5000px;
+  background-color: #000;
   color: #fff;
   margin: auto;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 200px;
+  position: relative;
 }
 .screen-title h1 {
   font: var(--font-section-title);
   padding-bottom: 200px;
+}
+.screen-iphone{
+  width: 100%;
 }
 #screen-iphone {
   width: 30%;
@@ -142,8 +188,38 @@ img {
   padding-bottom: 200px;
   filter: brightness(80%);
 }
+#iphoneScrollImg{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  transition: all 0.3s linear ease;
+  transform-origin: center center;
+  width: 90%;
+  filter: brightness(80%);
+  aspect-ratio: 16 /9 ;
+}
 .screen-cinema {
+  margin-top: auto;
+  position: relative;
   width: 100%;
+  overflow: hidden;
+}
+.screen-cinema::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 20%,
+    transparent 80%,
+    black 100%
+  );
 }
 #screen-cinema {
   width: 100%;
@@ -153,14 +229,24 @@ img {
   height: 550px;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.2) 100%
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.2) 100%
   );
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
+  /* display: none; */
+}
+.screen-20m-txt{
+  margin-top: auto;
+}
+.screen-20m-txt,
+.screen-dolby-txt {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-in-out;
 }
 .screen-txt p {
   font: var(--font-section-title);
@@ -169,11 +255,14 @@ img {
 .screen-txt span {
   color: var(--color-main);
 }
-
+.screen-txt.scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* homespeaker */
 .screen-speaker-wrap {
   width: 100vw;
-  background-color: #111;
+  background-color: #000;
   color: #fff;
   margin: auto;
   text-align: center;
@@ -187,18 +276,57 @@ img {
   font: var(--font-section-title);
   margin-bottom: 200px;
 }
+.screen-homes-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.screen-homes-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 20%,
+    transparent 80%,
+    black 100%
+  );
+}
 #homespeaker {
   width: 50%;
   margin: auto;
 }
 .screen-dolby {
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.screen-dolby::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 20%,
+    transparent 80%,
+    black 100%
+  );
 }
 #dolby {
   width: 100%;
   object-fit: cover;
   filter: brightness(70%);
 }
-.screen-dolby-txt{
+.screen-dolby-txt {
   margin-bottom: 0;
-}
+} 
