@@ -1,25 +1,31 @@
-@charset "urf-8";
+@charset "utf-8";
 
 .header-count-img {
   width: 100%;
   position: relative;
-  background-color: red;
+  padding: 10% 0;
 }
 .header-count-img > img {
   width: 100%;
   display: block;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .count-content {
   width: 80%;
   max-width: 1200px;
-  /* background-color: #000000; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* background-color: aquamarine; */
+  position: relative;
+
+  margin: auto;
+  /* margin-top: 10%; */
   text-align: center;
+  /* background-color: red; */
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* 재계봉 */
 #headline {
@@ -40,7 +46,8 @@
 }
 #countdown ul {
   margin-top: 10%;
-  
+  /* display: flex;
+  gap: 5px; */
 }
 #countdown li {
   display: inline-block;
@@ -62,9 +69,9 @@
 /* 예매하기 버튼 */
 .count-button {
   display: block;
-  font-size: 48px;
+  font-size: clamp(20px, 4vw, 34px);
   font-weight: bold;
-  padding: 18px 120px;
+  padding:1% 8%;
   border: none;
   border-radius: 15px;
   margin: 10% auto;
@@ -74,12 +81,12 @@
 /* 영화소개 */
 .movie-card {
   width: 85%;
-  margin: 10% auto;
+  min-width: 500px;
+  /* margin: 10% auto; */
   background-color: #d8d8d8;
   opacity: 87%;
   display: flex;
-  top: 80%;
-  left: 0;
+
   gap: 5%;
   padding: 3%;
   text-align: left;
@@ -88,12 +95,13 @@
 }
 .movie-card-left {
   width: 60%;
-  
-  padding: 8% 0;
+
+  /* padding: 8% 0; */
 }
 .movie-card-right {
   width: 40%;
-  
+  max-width: 310px;
+  min-width: 240px;
 }
 .card-right-img {
   width: 100%;
@@ -102,25 +110,79 @@
 .movie-card-right img {
   display: block;
   width: 100%;
-  height: 100%;
-  
 }
 /* 카드 폰트 칼라 */
 .card-title {
   font-size: 38px;
   color: #b78017;
 }
-h2 {
-  font-size: 20px;
+.movie-card-left h1 {
+  font-size: clamp(20px, 4vw, 34px);
+  margin-bottom: 4%;
+}
+.movie-card-left h2 {
+  /* font-size: 20px; */
+  font-size: clamp(18px, 2vw, 20px);
   color: #b78017;
 }
 .card-text {
-  font-size: 20px;
-  color: #111111;
-  padding-top: 3%;
+  font-size: 18px;
+  color: #555555;
+  /* padding-top: 3%; */
 }
 .card-text-itr {
-  font-size: 27px;
+  font-size: 18px;
   color: #b78017;
   padding-top: 3%;
+}
+@media all and (max-width: 1030px) {
+  .card-text {
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 874px) {
+  .card-text {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 768px) {
+  .movie-card {
+    width: 100%;
+  }
+  .movie-card-right {
+    width: 40%;
+
+    min-width: 200px;
+  }
+  .card-text {
+    font-size: 13px;
+  }
+}
+@media all and (max-width: 580px) {
+  .movie-card {
+    width: 65%;
+    max-width: 480px;
+    min-width: 320px;
+
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  .movie-card-right {
+    width: 100%;
+  }
+  .movie-card-left {
+    width: 100%;
+  }
+  #countdown ul {
+  
+    margin-bottom: 5%;
+  }
+  .count-button{
+    font-size: 21px ;
+    padding: 8px 32px;
+  }
+  .movie-card-left h1{
+    font-size: 24px;
+    padding-top: 14px;
+  }
 }
