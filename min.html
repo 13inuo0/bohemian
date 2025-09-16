@@ -114,100 +114,218 @@
         <div class="voteRadio-wrap">
           <form>
             <!-- 질문 -->
-            <div class="vote-Qtxt">
-              <span class="voteSection">VOTE</span>
-              <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
+            <div class="voteQ-txt-wrap">
+              <div class="vote-Qtxt">
+                <span class="voteSection">VOTE</span>
+                <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
+              </div>
             </div>
-            <input type="radio" id="vote-option1" name="vote-song" value="1" />
-            <label for="vote-option1">Bohemian Rhapsody</label>
-            <input type="radio" id="vote-option2" name="vote-song" value="1" />
-            <label for="vote-option2">We Are The Champions</label>
-            <input type="radio" id="vote-option3" name="vote-song" value="1" />
-            <label for="vote-option3">Don't Stop Me Now</label>
+            <div class="voteRadio-selects">
+              <input
+                type="radio"
+                id="vote-option1"
+                name="vote-song"
+                value="1"
+              />
+              <label for="vote-option1">Bohemian Rhapsody</label>
+              <input
+                type="radio"
+                id="vote-option2"
+                name="vote-song"
+                value="1"
+              />
+              <label for="vote-option2">We Are The Champions</label>
+              <input
+                type="radio"
+                id="vote-option3"
+                name="vote-song"
+                value="1"
+              />
+              <label for="vote-option3">Don't Stop Me Now</label>
+            </div>
             <input type="submit" value="투표하기" id="voteBtn1" />
           </form>
         </div>
 
         <!-- 투표결과 -->
         <div class="voteQ-wrap">
-          <!-- 질문 -->
-          <div class="vote-Qtxt">
-            <span class="voteSection">VOTE</span>
-            <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
-          </div>
-          <!-- 바 그래프 전체 -->
-          <ul id="voteGraph-wrap">
-            <li class="vote-list">
-              <div class="voteGraph-bg">
-                <progress
-                  id="voteGraph"
-                  class="voteGraph"
-                  value="0"
-                  max="100"
-                ></progress>
-                <!-- 타이틀 명 -->
-                <div class="song-title-txt">
-                  <span class="song-title">Bohemian Rhapsody</span>
-                  <span id="vote-percent">0%</span>
-                </div>
+          <div class="voteQ-inner">
+            <!-- 질문 -->
+            <div class="voteQ-txt-wrap">
+              <div class="vote-Qtxt">
+                <span class="voteSection">VOTE</span>
+                <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
               </div>
-            </li>
-            <li class="vote-list">
-              <div class="voteGraph-bg">
-                <progress
-                  id="voteGraph2"
-                  class="voteGraph"
-                  value="0"
-                  max="100"
-                ></progress>
-                <!-- 타이틀 명 -->
-                <div class="song-title-txt">
-                  <span class="song-title">We Are The Champions</span>
-                  <span id="vote-percent2">0%</span>
+            </div>
+            <!-- 바 그래프 전체 -->
+            <ul id="voteGraph-wrap">
+              <li class="vote-list">
+                <div class="voteGraph-bg">
+                  <progress
+                    id="voteGraph"
+                    class="voteGraph"
+                    value="0"
+                    max="100"
+                  ></progress>
+                  <!-- 타이틀 명 -->
+                  <div class="song-title-txt">
+                    <span class="song-title">Bohemian Rhapsody</span>
+                    <span id="vote-percent">0%</span>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="vote-list">
-              <div class="voteGraph-bg">
-                <progress
-                  id="voteGraph3"
-                  class="voteGraph"
-                  value="0"
-                  max="100"
-                ></progress>
-                <!-- 타이틀 명 -->
-                <div class="song-title-txt">
-                  <span class="song-title">Don't Stop Me Now</span>
-                  <span id="vote-percent3">0%</span>
+              </li>
+              <li class="vote-list">
+                <div class="voteGraph-bg">
+                  <progress
+                    id="voteGraph2"
+                    class="voteGraph"
+                    value="0"
+                    max="100"
+                  ></progress>
+                  <!-- 타이틀 명 -->
+                  <div class="song-title-txt">
+                    <span class="song-title">We Are The Champions</span>
+                    <span id="vote-percent2">0%</span>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+              <li class="vote-list">
+                <div class="voteGraph-bg">
+                  <progress
+                    id="voteGraph3"
+                    class="voteGraph"
+                    value="0"
+                    max="100"
+                  ></progress>
+                  <!-- 타이틀 명 -->
+                  <div class="song-title-txt">
+                    <span class="song-title">Don't Stop Me Now</span>
+                    <span id="vote-percent3">0%</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
             <!-- 투표하기 버튼 -->
             <button id="voteBtn">
               투표로 돌아가기 <i class="fa-solid fa-rotate-left"></i>
             </button>
-          </ul>
+          </div>
         </div>
+        <!-- 리뷰 및 기대평 (min✨) -->
+        <section id="flowSection">
+          <div class="flowsection-bg">
+            <div class="review-wrap">
+              <form>
+                <div class="reC-input">
+                  <input
+                    type="text"
+                    placeholder="영화 [보헤미안 랩소디]의 기대평을 작성해주세요."
+                  />
+                  <!-- 기대평의 제한 글자 수는 20-30자 -->
+                  <button id="reviewBtn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- 이벤트 및 하단 (min✨)-->
+        <section class="event-footer-wrap">
+          <!-- 배경 오버레이 -->
+          <div class="ft-bg">
+            <!-- 이벤트  -->
+            <div class="event-wrap">
+              <div class="event-content">
+                <img
+                  class="event-imgA"
+                  src="img/event_footer/event2-Silhouette.png"
+                  alt="보헤미안 랩소디 영화 이벤트 실루엣"
+                />
+                <img
+                  class="event-imgB"
+                  src="img/event_footer/event-contents.png"
+                  alt="보헤미안 랩소디 영화 이벤트"
+                />
+              </div>
+              <div class="event-content2">
+                <img class="eventC-imgA" src="img/event_footer/Group 331.png" alt="세로형 실루엣">
+              </div>
+            </div>
+
+            <!-- 하단 -->
+            <div class="ft-wrap">
+              <div class="ft-inner">
+                <!-- 왼쪽 하단 타이틀 -->
+                <div class="ft-title-wrap">
+                  <p class="ft-title">mini project</p>
+                  <p class="ft-copy">© COPYRIGHT ALL RIGHTS RESERVED</p>
+                </div>
+
+                <!-- 팀원 소개 -->
+                <div class="ft-name-wrap">
+                  <ul class="ft-name-list">
+                    <li>kim Nohyeun</li>
+                    <li>Kim Minseung</li>
+                    <li>Jin Dongmi</li>
+                    <li>Choe Jungeun</li>
+                  </ul>
+                </div>
+
+                <!-- 구독 영역 -->
+
+                <div class="ft-news-wrap">
+                  <p class="ft-news-title">영화 정보 받아보기</p>
+                  <p class="ft-news-desc">
+                    최신 영화 소식과 이벤트를 이메일로 받아보세요.
+                  </p>
+
+                  <form class="ft-form">
+                    <input
+                      id="ft-email"
+                      type="email"
+                      placeholder="이메일 주소를 입력하세요"
+                      required
+                    />
+                    <button type="submit" aria-label="구독 신청">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <!-- 구분선 -->
+              <hr class="ft-divider" />
+              <ul class="ft-sns">
+                <li>
+                  <a href="#"
+                    ><img
+                      class="fa-brands"
+                      src="img/event_footer/icon-twitter 1.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img
+                      class="fa-brands"
+                      src="img/event_footer/youtube icon 2.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img
+                      class="fa-brands"
+                      src="img/event_footer/instagram icon 3.png"
+                      alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </body>
     </html>
-    <!-- 리뷰 및 기대평 (min✨) -->
-    <section id="flowSection">
-      <div class="review-wrap">
-        <form>
-          <div class="reC-input">
-            <input
-              type="text"
-              placeholder="영화 [보헤미안 랩소디]의 기대평을 작성해주세요."
-            />
-            <!-- 기대평의 제한 글자 수는 20-30자 -->
-            <button id="reviewBtn">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- 이벤트 및 하단 (min✨)-->
   </body>
 </html>

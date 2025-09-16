@@ -1,100 +1,178 @@
-@charset "urf-8";
+@charset "utf-8";
+/* 투표 공통 질문 */
+.vote-Qtxt {
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 0 0 10% 6%; */
+  padding: 0 0 10% 0;
+  color: #fff;
+}
+.voteSection {
+  font-size: clamp(18px, 5vw, 38px);
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.voteQuestion {
+  font-size: clamp(18px, 5vw, 38px);
+  font-weight: 300;
+}
+
 /* 노래 라디오 투표 폼 */
 .voteRadio-wrap {
-  padding: 160px 0;
-  background-color: #111111;
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
 }
+.voteRadio-selects {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 질문 감추기 */
 .voteRadio-wrap.activeVote {
   display: none;
 }
+
+/* 폼 */
 .voteRadio-wrap form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 600px;
+  width: 80%;
+  /* height: 620px; */
+  max-width: 600px;
   margin: auto;
 }
+/* 라디오 버튼 숨기기 */
 .voteRadio-wrap input[type="radio"] {
   display: none;
 }
+
+/* 체크 되었을 때 색상 */
 .voteRadio-wrap input[type="radio"]:checked + label {
-  background-color: #ecfd02;
+  background-color: #fdc702;
 }
+/* 목록 색상 폼 */
 .voteRadio-wrap label {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   position: relative;
-  background-color: #fff0c4;
-  border-radius: 50px;
-  width: 500px;
+  width: 80%;
+  /* height: 80px; */
   height: 80px;
-  margin: auto;
+  border-radius: 50px;
+  padding: 0 8%;
+  /* padding: 5% 8%; */
+  margin: 0 auto 4%;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
-  color: #111111;
-  padding: 30px 50px;
-  margin-bottom: 25px;
-  font: 400 16px "Poppins", sans-serif;
+  color: #000000;
+  background-color: #fff0c4;
 }
+
+/* 버튼 */
 #voteBtn1 {
-  width: 500px;
+  width: 80%;
+  max-width: 600px;
   height: 70px;
   border: none;
   border-radius: 50px;
-  font: 400 16px "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   margin: auto;
   margin-top: 60px;
   background-color: #fdc702;
   cursor: pointer;
 }
-.voteGraph-bg {
-  height: 80px;
-}
-/* 노래 투표 결과 */
+
+/* 노래 결과 폼 */
 .voteQ-wrap {
-  width: 100%;
-  padding: 150px 0;
-  background-color: #111111;
-  /* display: none; */
+  /* display: flex; */
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+  display: none;
 }
-.vote-list {
-  height: 100%;
-  background-color: red;
-}
+/* 결과 보이기 */
 .voteQ-wrap.activeVote {
-  display: block;
+  display: flex;
 }
-.vote-Qtxt {
-  width: 600px;
+/* 폼 */
+.voteQ-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  /* height: 620px; */
+  max-width: 600px;
   margin: auto;
-  padding-left: 43px;
-  padding-bottom: 80px;
-  color: aliceblue;
 }
-.voteSection {
-  font: bold 38px "Poppins", sans-serif;
-  padding-bottom: 20px;
+
+.voteQ-txt-wrap {
+  margin: auto;
 }
-.voteQuestion {
-  font: 300 38px "Poppins", sans-serif;
-}
-/* 그래프 디자인 */
+
+/* 결과 목록 색상 폼 */
 #voteGraph-wrap {
-  width: 500px;
-  margin: auto;
+  width: 100%;
+  max-width: 600px; /* 폼의 버튼 폭과 톤을 맞춤 */
+  margin: 0 auto;
 }
 #voteGraph-wrap > li {
-  padding-bottom: 25px;
+  height: 100%;
+  margin: 0 auto 4%;
+  /* background-color: red; */
 }
 .voteGraph-bg {
   position: relative;
+  height: 80px;
+  display: flex;
+  justify-content: center; /* 자식 중앙 정렬 */
+  align-items: center;
 }
 .voteGraph {
-  width: 100%;
+  width: 80%;
   height: 80px;
-  /* line-height: 80px; */
-
+  margin: 0 auto; /* ← 중앙 정렬 */
   appearance: none;
+  position: relative;
+  z-index: 1;
 }
+/* 목록 글자 스타일 */
+.song-title-txt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80px;
+  padding: 0 8%;
+
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+
+  background: transparent; /* ← 배경 제거 */
+  border-radius: 50px;
+  z-index: 2; /* ← 텍스트가 위, 그래프는 아래 */
+  /* pointer-events: none;  필요하면 클릭 막힘 방지 */
+}
+.song-title-txt .song-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+/* .song-title-txt span:last-child {
+  flex-shrink: 0;
+} */
+
+/* 브라우저에 따른 목록 스타일 */
 /* 크롬, 사파리 */
 .voteGraph::-webkit-progress-bar {
   background: #fff0c4;
@@ -111,27 +189,83 @@
   border-radius: 50px;
   transition: width 1.5s ease;
 }
-.song-title-txt {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  font: 400 16px "Poppins", sans-serif;
-  color: #111111;
-}
+/* 버튼 */
 #voteBtn {
-  width: 100%;
+  width: 80%;
+  max-width: 600px;
   height: 70px;
   border: none;
   border-radius: 50px;
-  font: 400 16px "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto;
   margin-top: 60px;
   background-color: #fff0c4;
   cursor: pointer;
+  /* display: block; */
+}
+
+/* 태블릿 반응형 미디어쿼리 */
+@media (max-width: 768px) {
+  .voteRadio-wrap label {
+    height: clamp(45px, 15vw, 80px);
+  }
+  .voteRadio-wrap label {
+    font-size: clamp(12px, 3vw, 16px);
+  }
+  #voteBtn1 {
+    font-size: clamp(14px, 3vw, 16px);
+    height: clamp(48px, 9vw, 70px);
+  }
+  .voteGraph-bg {
+    height: clamp(45px, 15vw, 80px);
+  }
+  .voteGraph {
+    height: clamp(45px, 15vw, 80px);
+  }
+  .song-title-txt {
+    height: clamp(45px, 15vw, 80px);
+    font-size: clamp(12px, 1vw, 16px);
+  }
+  #voteBtn {
+    height: clamp(45px, 15vw, 70px);
+    font-size: clamp(14px, 3vw, 16px);
+  }
+}
+
+/* 앱 반응형 미디어쿼리 */
+@media (max-width: 360px) {
+  /* 폼 자체를 조금 더 넓게 */
+  .voteRadio-wrap form,
+  .voteQ-inner {
+    width: 92%;
+    max-width: 600px;
+  }
+
+  /* 그래프 컨테이너 높이 축소 */
+  .voteGraph-bg {
+    height: 64px;
+  }
+
+  /* progress & 오버레이 텍스트는 100%로 맞추기 */
+  .voteGraph {
+    width: 80%;
+    height: 64px;
+  }
+  .song-title-txt {
+    width: 80%;
+    height: 64px;
+    padding: 0 16px; /* 8% 대신 고정 패딩으로 좁은 화면 안정화 */
+    font-size: 12px; /* 글자 크기 살짝 축소 */
+    border-radius: 9999px; /* 캡슐 형태 유지 */
+  }
+
+  /* 상단 질문 여백도 살짝 줄이기(선택) */
+  .vote-Qtxt {
+    padding-bottom: 6%;
+  }
+  #voteGraph-wrap > li {
+    margin-bottom: 12px;
+  }
 }
