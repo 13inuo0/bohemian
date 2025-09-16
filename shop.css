@@ -24,6 +24,13 @@ header {
   background-color: #000000;
 }
 
+/* 햄버거 */
+.hamburger,
+.hamburgerBtn,
+.hamburgerlist {
+  display: none;
+}
+
 /* header-left */
 .shop-header-left {
   width: 60%;
@@ -33,7 +40,7 @@ header {
   white-space: nowrap;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 80%;
   padding-top: 8%;
 }
 
@@ -67,22 +74,22 @@ header {
   width: 20%;
 }
 
-.header-text > button {
+.header-text > .shop-icon {
   background-color: #ce0dc5;
   border-radius: 100px;
   border: none;
   cursor: pointer;
 }
 
-.header-text > button > .shop-icon {
+.header-text > a > .shop-icon {
   width: 130px;
   height: 40px;
+  margin-top: 5%;
 }
 
 .shop-banner {
   background-color: #000000;
   width: 100%;
-  margin: 0;
   padding-bottom: 2%;
 }
 
@@ -102,6 +109,14 @@ header {
   max-width: 70%;
   margin: 0 auto;
   margin-top: -2%;
+}
+
+.cast-banner-img {
+  width: 100%;
+}
+
+.cast-banner-img img {
+  width: 70%;
 }
 
 /* 전체 inner 적용 */
@@ -128,12 +143,32 @@ header {
 }
 
 /* top list */
-.top-list {
+.top-list,
+.bottom-list {
   margin: 4% auto;
   width: 100%;
   max-width: 1200px;
   display: flex;
-  gap: 90px;
+  flex-wrap: wrap;
+  gap: 3%;
+}
+
+.top-list li,
+.bottom-list li {
+  width: calc((100% - 6%) / 3);
+}
+
+.top-list li a,
+.bottom-list li a {
+  display: block;
+
+  width: 100%;
+}
+
+.top-list li a img,
+.bottom-list li a img {
+  width: 100%;
+  display: block;
 }
 
 /* 상품명 위 색상 표시 */
@@ -168,21 +203,6 @@ header {
   background-color: #95854c;
 }
 
-.top-list > li {
-  width: calc(100% / 3);
-  text-align: center;
-}
-
-.top-list > li > a {
-  display: block;
-  text-align: center;
-}
-
-.top-list > li > a > img {
-  width: 100%;
-  display: block;
-}
-
 .top-price {
   font-size: 18px;
   white-space: nowrap;
@@ -205,26 +225,6 @@ header {
   color: #000000;
 }
 
-/* bottom-list */
-.bottom-list {
-  display: flex;
-  gap: 90px;
-  margin: 8% auto;
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.bottom-list > li > a {
-  display: block;
-  text-align: center;
-}
-
-.bottom-list > li > a > img {
-  width: 100%;
-  display: block;
-}
-
 /* music */
 .music-inner {
   width: 100%;
@@ -241,22 +241,26 @@ header {
   padding-top: 4%;
 }
 
-
-/* banner */
-.banner-wrap{
-  width: 100%;
-  height: 500px;
-
+/* swiper */
+.shop-Swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner-img img{
-  width: 80%;
-  height: 500px;
-  margin: 0 auto;
+.shop-Swiper .swiper-slide img {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
+.shop-Swiper .swiper-pagination-bullet-active {
+  background: #000 !important;
+}
 
 /* acc */
 .acc-inner {
@@ -271,7 +275,7 @@ header {
 
 .acc-title {
   font-size: 30px;
-  padding-top: 2%;
+  padding-top: 8%;
   padding-bottom: 2%;
 }
 
@@ -324,10 +328,14 @@ footer {
 @media (max-width: 768px) {
   header {
     padding: 12px 16px;
+    justify-content: space-between;
   }
-
-  .header-list {
-    gap: 15px;
+  .shop-header-left {
+    width: auto;
+    flex: 1 1 auto;
+  }
+  .shop-header-right {
+    width: auto;
   }
 
   .header-list > li > a {
@@ -338,88 +346,80 @@ footer {
     font-size: 18px;
   }
 
-  .header-text > button > .shop-icon {
+  .header-text > a > .shop-icon {
     width: 80px;
     height: 25px;
+    margin-top: 10px;
   }
 
-  /* 배너 */
   .banner-text img {
-    width: 85%;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
   }
 
   .banner-p {
-    max-width: 85%;
-    margin-top: 8px;
-    font-size: 16px;
-    text-align: center;
+    max-width: 80%;
+    font-size: 15px;
+    text-align: left;
   }
 
-  .new-wrap,
-  .music-wrap,
-  .acc-wrap {
-    padding: 0 16px;
-  }
-
-  /* 타이틀 크기 조정 */
   .new-title,
   .music-title,
   .acc-title {
     font-size: 24px;
-    padding-top: 4%;
+    padding-top: 8%;
     padding-bottom: 4%;
   }
 
-  .top-list,
-  .bottom-list {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    align-items: start;
-  }
-
-  .top-list > li,
-  .bottom-list > li {
-    width: auto;
-  }
-
-  .top-list > li > a,
-  .bottom-list > li > a {
-    display: block;
-    text-align: center;
-  }
-
-  .top-list > li > a > img,
-  .bottom-list > li > a > img {
-    width: 100%;
-    display: block;
-  }
-
+  /* 색상칩 및 텍스트 크기 조정 */
   .color-boxes {
-    padding: 8px 0 6px;
-    gap: 3px;
+    padding: 10px 0 6px;
+    gap: 4px;
   }
 
-  .top-price,
-  .top-price3 {
-    font-size: 13px;
+  .top-price {
+    font-size: 12px;
+    white-space: nowrap;
   }
 
+  /* 가격 */
   .top-price2 {
     font-size: 12px;
+    font-weight: 600;
+  }
+
+  .top-price3 {
+    font-size: 12px;
+    margin-top: 2%;
+  }
+
+  /* middle banner */
+  .center-banner-wrap {
+    height: auto;
+  }
+
+  .center-banner-img {
+    width: 100%;
+  }
+
+  .center-banner-img img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    display: block;
   }
 
   footer {
-    margin-top: 10%;
+    margin-top: 20%;
     height: auto;
     padding: 16px 0;
   }
 
   .band-title {
-    font-size: 10px;
-    padding-top: 15px;
-    padding-bottom: 7px;
+    font-size: 13px;
+    padding-top: 12px;
+    padding-bottom: 8px;
   }
 
   .band-list {
@@ -427,6 +427,168 @@ footer {
   }
 
   .band-list > li > a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  header {
+    padding: 12px 16px;
+    position: relative;
+  }
+  .hamburger,
+  .hamburgerBtn,
+  .hamburgerlist {
+    display: block;
+  }
+
+  /* 햄버거 토글 */
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+    z-index: 1002;
+  }
+
+  .hamburgerBtn > .fa-solid {
+    color: #ce0dc5;
+    font-size: 23px;
+  }
+
+  .hamburgerlist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  .hamburgerlist > li > a {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .nav-open .mobile-nav {
+    left: 0px;
+  }
+
+  .mobile-nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -1000px;
+    bottom: 0;
+
+    transition: all 0.5s ease;
+    padding: 50px 10px;
+    /* overflow: auto; */
+    z-index: 1000;
+  }
+
+  .shop-header-left {
+    display: none;
+  }
+
+  .shop-header-right {
+    display: none;
+  }
+
+  .banner-text > img {
+    width: 100%;
+    max-width: 320px;
+    display: block;
+  }
+
+  .banner-p {
+    max-width: 80%;
+    font-size: 10px;
+    margin-top: -2%;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .banner-img img {
+    width: 80%;
+    max-width: 360px;
+    display: block;
+  }
+  .top-list,
+  .bottom-list {
+    width: 80%;
+    justify-content: center;
+  }
+  .top-list li,
+  .bottom-list li {
+    width: 100%;
+  }
+  /* 섹션 타이틀 */
+  .new-title,
+  .music-title,
+  .acc-title {
+    font-size: 20px;
+    padding-top: 10%;
+    padding-bottom: 4%;
+  }
+
+  /* 색상칩 & 텍스트 */
+  .color-boxes {
+    padding: 6px 0 4px;
+    gap: 3px;
+  }
+
+  .color-swatch {
+    width: 16px;
+    height: 5px;
+  }
+
+  .top-price {
+    font-size: 11.5px;
+    font-weight: 600;
+    padding-top: 3px;
+  }
+
+  .top-price2 {
     font-size: 12px;
+    font-weight: 600;
+  }
+
+  .top-price3 {
+    font-size: 11.5px;
+    padding-top: 15px;
+  }
+
+  /* 중간 배너 */
+  .center-banner-wrap {
+    height: auto;
+  }
+
+  .center-banner-img {
+    width: 100%;
+    margin: 40px auto 20px;
+  }
+
+  .center-banner-img img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 푸터 */
+  footer {
+    width: 100%;
+    margin-top: 16%;
+    height: auto;
+    padding: 14px 0;
+  }
+
+  .band-title {
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+  .band-list > li > a {
+    font-size: 7.5px;
   }
 }
