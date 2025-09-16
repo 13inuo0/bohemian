@@ -14,13 +14,19 @@ body {
 
 .card-container {
   position: relative;
-  width: 1200px;
-  height: 600px;
-  margin: auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 400px;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-container .card:hover {
+  flex: 8;
+  z-index: 3;
 }
 
 /* cast title */
@@ -29,14 +35,16 @@ body {
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: #fff;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .card {
+  width: 100%;
+  /* height: 100%; */
   position: relative;
   flex: 1;
-  perspective: 500px;
-  transition: flex 0.5s;
+  perspective: 400px;
+  transition: flex 0.6s ease, transform 0.6s ease;
 }
 
 .card-inner {
@@ -47,9 +55,9 @@ body {
   justify-content: center;
   align-items: center;
   color: #000;
-  border-radius: 20px;
-  transform: rotateY(180deg);
-  transition: transform 0.5s;
+  border-radius: 10px;
+  transform: none;
+  transition: transform 0.6s;
   overflow: hidden;
 }
 
@@ -59,41 +67,175 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  display: block;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 30px;
   transition: opacity 0.5s;
-  transform: rotateY(180deg);
 }
+
 
 /* 초기 이미지 (앞면) */
 .card-image.front {
   opacity: 1;
-  transform: rotateY(180deg);
+  z-index: 2;
+  transition: opacity 0.1s ease;
 }
 
-/* 확장 시 보여질 이미지 (뒷면) */
+/* 호버 시 보여질 이미지 (뒷면) */
 .card-image.back {
-  /* display: none; */
   opacity: 0;
-  transform: rotateY(0deg);
+  z-index: 1;
+  transition: opacity 0.5s ease;
 }
 
-/* 확장 상태에서 이미지 전환 */
+.card:hover .card-image.front {
+  opacity: 0;
+}
+
+.card:hover .card-image.back {
+  opacity: 1;
+  z-index: 2;
+}
+
 .card.expand .card-image.front {
-  /* display: none; */
   opacity: 0;
 }
 
 .card.expand .card-image.back {
   opacity: 1;
+  z-index: 3;
 }
 
 .rotate {
   transform: rotateY(0deg);
 }
 
-.expand {
-  flex: 10;
-  z-index: 10;
+.mobile-card-container {
+  display: none;
 }
+
+.mobile-swiper {
+  display: none;
+}
+
+@media screen and (max-width: 1340px) {
+  .card-container {
+    height: 29.85vw;
+  }
+}
+
+/* 768px 이하: CAST 카드 2열 */
+@media (max-width: 768px) {
+  .card-container {
+    display: none;
+  }
+
+  .mobile-card-container {
+    width: 80%;
+    height: auto;
+    position: relative;
+    display: block;
+    margin: auto;
+  }
+
+  /* 프론트: 겹치기 위해 absolute */
+  .mobil-front {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  /* 프론트 이미지 크기 설정 */
+  .mobil-front img {
+    width: calc((100% - 10px) / 2);
+    display: block;
+  }
+
+  /* 백 이미지 컨테이너 */
+  .mobil-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  /* 백 이미지들 */
+  .mobil-back img {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .mobil-back img.active {
+    opacity: 1;
+  }
+
+
+}
+@media (max-width: 390px) {
+ .cast-title > h1{
+  font-size: 40px;
+ }
+
+  .mobile-card-container {
+    display: none;
+  }
+
+  .mobile-swiper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100vw;
+  }
+
+  .front-swiper {
+    width: 80%;
+  }
+
+  .front-swiper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .mobile-swiper-back {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .mobile-swiper-back img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .mobile-swiper-back img.active {
+    opacity: 1;
+  }
+}
+
+
+
