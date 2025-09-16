@@ -20,7 +20,7 @@
   }
   //end
   
-  const countDown = new Date("09/26/2025").getTime(),
+  const countDown = new Date("09/20/2025").getTime(),
       x = setInterval(function() {    
 
         const now = new Date().getTime(),
