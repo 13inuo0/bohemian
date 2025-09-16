@@ -1,8 +1,18 @@
 window.addEventListener("load", () => {
   const swiper = new Swiper(".bestScene-slide", {
-    loop:true,
-    slidesPerView: 3.5,
+    loop: true,
+    slidesPerView: 3,
     spaceBetween: 20,
+    breakpoints: {
+      961: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      501: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
   });
   // slide thum에 클릭한 이미지로 변경
   const thumbImg = document.querySelectorAll(".swiper-slide img");
@@ -11,11 +21,13 @@ window.addEventListener("load", () => {
   const pagenationLeft = document.getElementById("best-left");
   const pagenationRight = document.getElementById("best-right");
   let currnetIndex = 0;
+
   thumbImg.forEach((tImg, index) => {
     tImg.addEventListener("click", () => {
       mainImg.src = tImg.src;
       currnetIndex = index;
       updateSlide(currnetIndex);
+
       // slide thum에 클릭한 이미지에 해당하는 설명으로 변경
       bestDscr.forEach((bestD, index) => {
         bestD.classList.remove("show");
@@ -27,11 +39,21 @@ window.addEventListener("load", () => {
   });
   function updateSlide(index) {
     mainImg.src = thumbImg[index].src;
+    // 메인이미지 경로를 가진 썸네일에 하이라이트
+    thumbImg.forEach((t) => {
+      if (t.src === mainImg.src) {
+        t.style.filter = `brightness(100%)`;
+      } else {
+        t.style.filter = `brightness(50%)`;
+      }
+    });
     bestDscr.forEach((d) => {
       d.classList.remove("show");
-      bestDscr[index].classList.add("show");
     });
+    bestDscr[index].classList.add("show");
   }
+  // 첫번째 이미지 기준으로 초기 세팅
+  updateSlide(currnetIndex);
   // pagenation 활성화
   pagenationLeft.addEventListener("click", () => {
     currnetIndex = (currnetIndex - 1 + thumbImg.length) % thumbImg.length;
@@ -43,8 +65,7 @@ window.addEventListener("load", () => {
     updateSlide(currnetIndex);
     swiper.slideNext();
   });
-  pagenationLeft.addEventListener("click", () => {});
-  pagenationRight.addEventListener("click", () => {});
+
   // play버튼 활성화
   const playBtn = document.querySelectorAll(".best-play-box .button-box i");
   playBtn.forEach((pBtn) => {
@@ -59,7 +80,7 @@ window.addEventListener("load", () => {
   const pause = document.querySelector(".fa-circle-pause");
   const audio = document.getElementById("bohemian-bgm");
   const progressStick = document.querySelector(".play-progress");
-  audio.volume = 1;
+  audio.volume = 0.5;
   play.addEventListener("click", () => {
     audio.play();
   });
@@ -73,87 +94,116 @@ window.addEventListener("load", () => {
   });
   //
   // 스크롤 효과
-const scrollTxt = document.querySelectorAll(".screen-20m-txt,.screen-dolby-txt");
-const iphoneScroll = document.querySelector("#iphoneScrollImg");
-const screenWrap = document.querySelector(".screen-wrap");
-const cinema = document.querySelector(".screen-cinema");
-if (!iphoneScroll || !screenWrap || !cinema) return;
+  const scrollTxt = document.querySelectorAll(
+    ".screen-20m-txt,.screen-dolby-txt"
+  );
+  const iphoneScroll = document.querySelector("#iphoneScrollImg");
+  const screenWrap = document.querySelector(".screen-wrap");
+  const cinema = document.querySelector(".screen-cinema");
+  if (!iphoneScroll || !screenWrap || !cinema) return;
 
-let windowHeight, startScrollY, endScrollY, imgDocTop;
-const iphoneScrollMaxScale = 1; 
+  let windowHeight, startScrollY, endScrollY, imgDocTop;
+  const iphoneScrollMaxScale = 1;
 
-function calcPosition() {
-  windowHeight = window.innerHeight;
-  fixedTop = Math.round(windowHeight * 0.15); 
+  function calcPosition() {
+    windowHeight = window.innerHeight;
+    fixedTop = Math.round(windowHeight * 0.3);
 
-  const rect = iphoneScroll.getBoundingClientRect();
-  imgDocTop = rect.top + window.scrollY; 
+    const rect = iphoneScroll.getBoundingClientRect();
+    imgDocTop = rect.top + window.scrollY;
 
-  startScrollY = imgDocTop - fixedTop; 
-  const cinemaRect = cinema.getBoundingClientRect();
-  const cinemaDocTop = cinemaRect.top + window.scrollY;
-  endScrollY = cinemaDocTop - fixedTop; 
-}
+    startScrollY = imgDocTop - windowHeight / 2;
+    const cinemaRect = cinema.getBoundingClientRect();
+    const cinemaDocTop = cinemaRect.top + window.scrollY;
+    endScrollY = cinemaDocTop - fixedTop;
+  }
 
-
-calcPosition();
-window.addEventListener("resize", () => {
   calcPosition();
-  onScroll(); 
-});
-const imgsInside = screenWrap.querySelectorAll("img");
-imgsInside.forEach((img) => img.addEventListener("load", () => {
+  window.addEventListener("resize", () => {
+    calcPosition();
+    onScroll();
+  });
+  const imgsInside = screenWrap.querySelectorAll("img");
+  imgsInside.forEach((img) =>
+    img.addEventListener("load", () => {
+      calcPosition();
+      onScroll();
+    })
+  );
+
+  // 스크롤 텍스트
+
+  function handleTextScroll(scrollY) {
+    scrollTxt.forEach((txt) => {
+      const rect = txt.getBoundingClientRect();
+      const docTop = rect.top + window.scrollY;
+      const trick = docTop - windowHeight / 1.2;
+      txt.classList.toggle("scroll", scrollY > trick);
+    });
+  }
+
+  // 컨텐츠 스크롤 이벤트
+  const homespeaker = document.querySelector(".screen-homes");
+  const dolbyimg = document.querySelector("#dolby");
+  function handleContentsScroll(scrollY, el) {
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const docTop = rect.top + window.scrollY;
+    const windowHeight = window.innerHeight;
+    const trick = docTop - windowHeight / 1.2;
+    if (scrollY > trick) {
+      el.classList.add("scroll");
+    } else {
+      el.classList.remove("scroll");
+    }
+  }
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    // console.log("scrollY:", scrollY);
+    handleTextScroll(scrollY);
+    // 컨텐츠 스크롤 이벤트 활성화
+    handleContentsScroll(scrollY, homespeaker);
+    handleContentsScroll(scrollY, dolbyimg);
+    const iphone = document.querySelector("#screen-iphone");
+    // 스크린 스크롤이벤트 시작전
+    if (scrollY < startScrollY) {
+      iphoneScroll.style.position = "absolute";
+      iphoneScroll.style.top = `${iphone.offsetTop}px`;
+      iphoneScroll.style.left = "50%";
+      iphoneScroll.style.transform = `translateX(-50%) scale(0.2)`;
+      iphoneScroll.style.opacity = "0";
+    }
+    // 스크린 스크롤 이벤트 시작
+    else if (scrollY >= startScrollY && scrollY < endScrollY) {
+      const progress =
+        (scrollY - startScrollY) / Math.max(1, endScrollY - startScrollY);
+      const p = Math.min(1, Math.sqrt(progress));
+      const scale = Math.max(0.2, p * iphoneScrollMaxScale);
+      const opacity = Math.min(1, p * 5);
+
+      iphoneScroll.style.position = "fixed";
+      iphoneScroll.style.left = "50%";
+      iphoneScroll.style.top = "50%";
+      iphoneScroll.style.transform = `translate(-50% , -50%) scale(${scale})`;
+      iphoneScroll.style.opacity = `${opacity}`;
+      iphoneScroll.style.pointerEvents = "none";
+    }
+    // 스크린 페이드아웃
+    else {
+      iphoneScroll.style.position = "absolute";
+      iphoneScroll.style.left = "50%";
+      iphoneScroll.style.top = `${cinema.offsetTop}px`;
+      iphoneScroll.style.transform = `translateX(-50%) scale(${iphoneScrollMaxScale})`;
+
+      // const fadeProgress =  Math.min(Math.max(fadeProgress, 0), 1);
+      // iphoneScroll.style.opacity = `${1 - fadeProgress}`;
+      // iphoneScroll.style.opacity = "0";
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
   calcPosition();
   onScroll();
-}));
-
-function handleTextScroll(scrollY) {
-  scrollTxt.forEach((txt) => {
-    const trick = txt.offsetTop - windowHeight / 1.2;
-    txt.classList.toggle("scroll", scrollY > trick);
-  });
-}
-
-function onScroll() {
-  const scrollY = window.scrollY;
-  handleTextScroll(scrollY);
-
-  // 스크롤이벤트 시작전
-  if (scrollY < startScrollY) {
-    iphoneScroll.style.position = "absolute";
-    iphoneScroll.style.top = `${iphoneScroll.offsetTop}px`; 
-    iphoneScroll.style.left = "50%";
-    iphoneScroll.style.transform = `translateX(-50%) scale(0.2)`;
-    iphoneScroll.style.opacity = "0";
-  }
-  // 스크롤 이벤트 시작
-  else if (scrollY >= startScrollY && scrollY < endScrollY) {
-    const progress = (scrollY - startScrollY) / Math.max(1, endScrollY - startScrollY);
-    const p = Math.min(1, Math.sqrt(progress)); 
-    const scale = Math.max(0.2,p * iphoneScrollMaxScale ); 
-    const opacity = Math.min(1, p * 5); 
-
-    iphoneScroll.style.position = "fixed";
-    iphoneScroll.style.left = "50%";
-    iphoneScroll.style.top = "50%";
-    iphoneScroll.style.transform = `translate(-50% , -50%) scale(${scale})`;
-    iphoneScroll.style.opacity = `${opacity}`;
-    iphoneScroll.style.pointerEvents = "none";
-  }
-  //페이드아웃
-  else {
-    iphoneScroll.style.position = "absolute";
-    iphoneScroll.style.left = "50%";
-    iphoneScroll.style.top = `${cinema.offsetTop}px`;
-    iphoneScroll.style.transform = `translateX(-50%) scale(${iphoneScrollMaxScale})`;
-
-    const fadeProgress = Math.min((scrollY - endScrollY) / windowHeight, 1);
-    iphoneScroll.style.opacity = `${1 - fadeProgress}`;
-  }
-}
-
-window.addEventListener("scroll", onScroll, { passive: true });
-
-calcPosition();
-onScroll();
 });
