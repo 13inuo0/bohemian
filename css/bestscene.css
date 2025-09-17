@@ -410,6 +410,9 @@ img {
   .best-play-box .button-box i {
     font-size: 45px;
   }
+  #q{
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 1170px) {
   /* best */
@@ -433,6 +436,9 @@ img {
   }
   .best-pagenation button img {
     width: 40px;
+  }
+  .quick-menu{
+    width: 5%;
   }
 }
 @media screen and (max-width: 960px) {
@@ -501,6 +507,10 @@ img {
 }
 @media screen and (max-width: 768px) {
   /* best */
+  #photo{
+    margin-top: 10%;
+     scroll-margin-top: 150px;
+  }
   .best-txt-bg {
     padding: 7% 4%;
   }
@@ -540,7 +550,7 @@ img {
     margin-top: 21%;
   }
   .screen-title h1 {
-    font-size: 30px;
+    font-size: 38px;
     padding: 150px 0;
   }
   #screen-iphone {
@@ -558,11 +568,14 @@ img {
   }
   /* speaker */
   .screen-homes h1 {
-    font-size: 30px;
+    font-size: 38px;
     margin-bottom: 150px;
   }
   .screen-homes {
     padding: 150px 0;
+  }
+   .quick-menu{
+    width: 7%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -631,6 +644,9 @@ img {
   .best-mainImg::before {
     background: none;
   }
+  .quick-menu{
+    width: 9%;
+  }
 }
 @media screen and (max-width: 390px) {
   /* screen */
@@ -638,7 +654,7 @@ img {
     height: 1500px;
   }
   .screen-title h1 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     padding: 120px 0;
   }
@@ -655,7 +671,7 @@ img {
   }
   /* speaker */
   .screen-homes h1 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     margin-bottom: 120px;
   }
@@ -664,5 +680,8 @@ img {
   }
   .screen-wrap {
     margin-top: 65%;
+  }
+  .quick-menu{
+    width: 12%;
   }
 }
