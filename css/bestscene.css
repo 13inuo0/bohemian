@@ -410,6 +410,9 @@ img {
   .best-play-box .button-box i {
     font-size: 45px;
   }
+  #q{
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 1170px) {
   /* best */
@@ -433,6 +436,9 @@ img {
   }
   .best-pagenation button img {
     width: 40px;
+  }
+  .quick-menu{
+    width: 5%;
   }
 }
 @media screen and (max-width: 960px) {
@@ -564,6 +570,9 @@ img {
   .screen-homes {
     padding: 150px 0;
   }
+   .quick-menu{
+    width: 7%;
+  }
 }
 @media screen and (max-width: 650px) {
   /* best */
@@ -631,6 +640,9 @@ img {
   .best-mainImg::before {
     background: none;
   }
+  .quick-menu{
+    width: 9%;
+  }
 }
 @media screen and (max-width: 390px) {
   /* screen */
@@ -664,5 +676,8 @@ img {
   }
   .screen-wrap {
     margin-top: 65%;
+  }
+  .quick-menu{
+    width: 12%;
   }
 }
