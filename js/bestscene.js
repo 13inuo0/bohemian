@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
     },
   });
   // slide thum에 클릭한 이미지로 변경
-  const thumbImg = document.querySelectorAll(".swiper-slide img");
+  const thumbImg = document.querySelectorAll(".bestScene-slide img");
   const mainImg = document.querySelector(".best-mainImg img");
   const bestDscr = document.querySelectorAll(".best-txt-box");
   const pagenationLeft = document.getElementById("best-left");
@@ -206,4 +206,25 @@ window.addEventListener("load", () => {
 
   calcPosition();
   onScroll();
+
+  // quick
+  const goTop = document.getElementById("gotop");
+  const goBottom = document.getElementById("gobottom");
+  goTop.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+  goBottom.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.scrollTo({
+      top: this.document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  });
+  if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 });
