@@ -108,17 +108,16 @@ window.addEventListener("load", function () {
     }
   });
 
-  // placeholder 내용 반응형 적용하기
-  const input = document.getElementById("reC-input-txt"); // id="myInput"인 input 요소를 선택
-
+ // placeholder 반응형 적용
   function updatePlaceholder() {
     if (window.innerWidth < 768) {
-      input.placeholder = "기대평을 작성해주세요";
+      reviewInput.placeholder = "기대평을 작성해주세요";
     } else {
-      input.placeholder = "영화 [보헤미안 랩소디]의 기대평을 작성해주세요.";
+      reviewInput.placeholder = "영화 [보헤미안 랩소디]의 기대평을 작성해주세요.";
     }
   }
 
   updatePlaceholder();
   window.addEventListener("resize", updatePlaceholder);
 });
+

@@ -26,11 +26,11 @@
     <!-- Open Graph 프로토콜에서 사용되는 메타 태그의 속성 중 하나로,
 페이지의 간략한 설명을 제공하는 데 사용 -->
     <!-- 소셜 미디어에서 공유될 때 사용되는 URL -->
-    <meta property="og:url" content="https://github.io/" />
+    <meta property="og:url" content="https://bohemian-theta.vercel.app/" />
     <!-- 소셜 미디어에서 페이지가 공유될 때 표시되는 이미지 -->
     <meta
       property="og:image"
-      content="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/b492c1e6-b97e-4865-b551-fa2232e9324b/compose?aspectRatio=1.78&format=webp&width=1200"
+      content="https://bohemian-theta.vercel.app/img/bestscene/common%20(2).jpg"
     />
     <!-- 소셜 미디어에서 페이지가 공유될 때 사용되는 설명 -->
     <meta
@@ -95,6 +95,22 @@
     />
   </head>
   <body>
+    <!-- quick -->
+    <ul class="quick-menu">
+      <li id="q-btn">
+        <a href="#" id="q">예매<br />하기</a>
+      </li>
+      <li>
+        <a href="#" id="gotop"
+          ><img src="img/bestscene/up-angle.png" alt="up"
+        /></a>
+      </li>
+      <li>
+        <a href="#" id="gobottom"
+          ><img src="img/bestscene/down-angle.png" alt="down"
+        /></a>
+      </li>
+    </ul>
     <!-- 상단 -->
     <header class="header">
       <!-- header-box -->
@@ -109,12 +125,12 @@
         <!-- 메뉴 -->
         <nav class="header-nav">
           <ul class="header-topmenu">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">OVERVIEW</a></li>
-            <li><a href="#">CAST</a></li>
-            <li><a href="#">PHOTO</a></li>
-            <li><a href="#">EVENT</a></li>
-            <li><a href="#">SHOP</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#overview">OVERVIEW</a></li>
+            <li><a href="#cast">CAST</a></li>
+            <li><a href="#photo">PHOTO</a></li>
+            <li><a href="#event">EVENT</a></li>
+            <li><a href="shop.html" target="_blank">SHOP</a></li>
           </ul>
         </nav>
         <!-- 햄버거 메뉴 버튼 -->
@@ -126,12 +142,12 @@
         <!--  모바일일때 사이드 메뉴 -->
         <div class="header-mobile-menu" id="headr-mobile-Menu">
           <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">OVERVIEW</a></li>
-            <li><a href="#">CAST</a></li>
-            <li><a href="#">PHOTO</a></li>
-            <li><a href="#">EVENT</a></li>
-            <li><a href="#">SHOP</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#overview">OVERVIEW</a></li>
+            <li><a href="#cast">CAST</a></li>
+            <li><a href="#photo">PHOTO</a></li>
+            <li><a href="#event">EVENT</a></li>
+            <li><a href="shop.html" target="_blank">SHOP</a></li>
           </ul>
         </div>
         <!-- 오버레이 -->
@@ -143,12 +159,14 @@
     <div class="header-gif">
       <img src="img/header/intro (1).webp" alt="gif" />
       <!-- 예매하기 버튼 -->
-      <button class="header-button">예매하기 ></button>
+      <a href="#" class="header-button">
+        <button>예매하기</button>
+      </a>
     </div>
 
     <!-- 카운트다운 및 영화소개 -->
     <div class="header-count-img">
-      <img src="img/cast/headerbg.png" alt="count" />
+      <img src="img/cast/headerbg (2).png" alt="count" />
       <div class="count-content">
         <h1 id="headline">9월 1일(월) 저녁 9시 재개봉</h1>
 
@@ -160,9 +178,12 @@
             <li><span id="seconds">11</span>Seconds</li>
           </ul>
         </div>
-        <button class="count-button">예매하기</button>
+        <a href="#" class="count-button">
+          <button>예매하기</button>
+        </a>
+
         <!-- 영화 소개 -->
-        <div class="movie-card">
+        <div class="movie-card" id="overview">
           <div class="movie-card-left">
             <h1 class="card-title">보헤미안 랩소디</h1>
             <h2>2018 12+ 드라마 장르 134분</h2>
@@ -191,7 +212,7 @@
     </div>
     <!-- !! CAST !! -->
     <!-- cast title -->
-    <div class="cast-wrap">
+    <div class="cast-wrap" id="cast">
       <div class="cast-title">
         <h1>CAST</h1>
       </div>
@@ -312,7 +333,7 @@
     </div>
 
     <!-- 명장면 다시보기 -->
-    <div class="bestscene-wrap">
+    <div class="bestscene-wrap" id="photo">
       <div class="best-mainImg">
         <img src="img/bestscene/common (6).jpg" alt="still1" class="show" />
       </div>
@@ -451,7 +472,7 @@
       </div>
     </div>
     <!-- 투표 폼 -->
-    <div class="voteRadio-wrap">
+    <div class="voteRadio-wrap" id="event">
       <form>
         <!-- 질문 -->
         <div class="voteQ-txt-wrap">

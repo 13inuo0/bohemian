@@ -507,6 +507,10 @@ img {
 }
 @media screen and (max-width: 768px) {
   /* best */
+  #photo{
+    margin-top: 10%;
+     scroll-margin-top: 150px;
+  }
   .best-txt-bg {
     padding: 7% 4%;
   }
@@ -546,7 +550,7 @@ img {
     margin-top: 21%;
   }
   .screen-title h1 {
-    font-size: 30px;
+    font-size: 38px;
     padding: 150px 0;
   }
   #screen-iphone {
@@ -564,7 +568,7 @@ img {
   }
   /* speaker */
   .screen-homes h1 {
-    font-size: 30px;
+    font-size: 38px;
     margin-bottom: 150px;
   }
   .screen-homes {
@@ -650,7 +654,7 @@ img {
     height: 1500px;
   }
   .screen-title h1 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     padding: 120px 0;
   }
@@ -667,7 +671,7 @@ img {
   }
   /* speaker */
   .screen-homes h1 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     margin-bottom: 120px;
   }

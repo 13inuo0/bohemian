@@ -169,6 +169,10 @@
   border-radius: 15px;
   background-color: #fdc702;
 }
+
+.header-button button {
+  all: unset;
+}
 /* .gotop-btn {
   width: 60px;
   height: 60px;
@@ -360,7 +364,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   /* gotop button */
-  .gotop-btn{
+  .gotop-btn {
     margin-top: 20%;
   }
 }

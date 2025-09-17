@@ -8,12 +8,14 @@
   color: #fff;
 }
 .voteSection {
-  font-size: clamp(18px, 5vw, 38px);
+  /* font-size: clamp(18px, 5vw, 38px); */
+  font-size: 64px;
   font-weight: 700;
   padding-bottom: 10px;
 }
 .voteQuestion {
-  font-size: clamp(18px, 5vw, 38px);
+  /* font-size: clamp(18px, 5vw, 38px); */
+  font-size: 38px;
   font-weight: 300;
 }
 
@@ -208,8 +210,12 @@
 
 /* 태블릿 반응형 미디어쿼리 */
 @media (max-width: 768px) {
-  .voteRadio-wrap{
-    height: 150vw;
+  .voteSection {
+    font-size: 38px;
+  }
+  .voteRadio-wrap {
+    height: 180vw;
+    scroll-margin-top: -100px;
   }
   .voteRadio-wrap label {
     height: clamp(45px, 15vw, 80px);
@@ -234,6 +240,14 @@
   #voteBtn {
     height: clamp(45px, 15vw, 70px);
     font-size: clamp(14px, 3vw, 16px);
+  }
+}
+@media (max-width: 390px) {
+  .voteSection {
+    font-size: 24px;
+  }
+  .voteQuestion {
+    font-size: 21px;
   }
 }
 
