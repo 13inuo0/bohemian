@@ -10,11 +10,12 @@ window.addEventListener("load", function () {
   //   콘텐츠에 표시되는 문구 목록
   const reviewMs = [
     "퀸의 명곡들을 극장에서 다시 들을 수 있다니 설레네요!",
-    "명곡과 함께했던 추억이 영화관에서 다시 살아날 것 같아요.",
-    "처음 개봉 때의 감동을 다시 느낄 수 있어 너무 설레네요.",
+    "극장에서 퀸을 만날 생각에 설렙니다.",
+    "감동 재현",
     "콘서트장 같은 몰입감을 영화관에서 다시 체험하고 싶습니다.",
-    "보컬과 밴드 사운드가 극장을 가득 채울 순간이 기다려져요.",
-    "프레디 머큐리의 무대를 다시 만날 수 있다니 기대됩니다.",
+    "프레디 최고",
+    "프레디의 목소리가 기다려져요.",
+    "기대 만땅",
   ];
 
   //   최근 추가 된 문구 위치를 기억할 배열
@@ -58,7 +59,7 @@ window.addEventListener("load", function () {
     flowText.style.animationDuration = randomSpeed + "s"; // moveLeft의 duration을 덮어씀
 
     // ⭐ 랜덤 폰트 크기 (18~32px 예시)
-    const randomFontSize = 18 + Math.floor(Math.random() * 16);
+    const randomFontSize = 18 + Math.floor(Math.random() * 14);
     flowText.style.fontSize = randomFontSize + "px";
 
     // 4. 애니메이션이 끝나면 DOM에서 제거
@@ -106,4 +107,18 @@ window.addEventListener("load", function () {
       }
     }
   });
+
+  // placeholder 내용 반응형 적용하기
+  const input = document.getElementById("reC-input-txt"); // id="myInput"인 input 요소를 선택
+
+  function updatePlaceholder() {
+    if (window.innerWidth < 768) {
+      input.placeholder = "기대평을 작성해주세요";
+    } else {
+      input.placeholder = "영화 [보헤미안 랩소디]의 기대평을 작성해주세요.";
+    }
+  }
+
+  updatePlaceholder();
+  window.addEventListener("resize", updatePlaceholder);
 });
