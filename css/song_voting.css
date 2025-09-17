@@ -208,6 +208,9 @@
 
 /* 태블릿 반응형 미디어쿼리 */
 @media (max-width: 768px) {
+  .voteRadio-wrap{
+    height: 150vw;
+  }
   .voteRadio-wrap label {
     height: clamp(45px, 15vw, 80px);
   }
@@ -216,7 +219,7 @@
   }
   #voteBtn1 {
     font-size: clamp(14px, 3vw, 16px);
-    height: clamp(48px, 9vw, 70px);
+    height: clamp(45px, 15vw, 70px);
   }
   .voteGraph-bg {
     height: clamp(45px, 15vw, 80px);
@@ -226,7 +229,7 @@
   }
   .song-title-txt {
     height: clamp(45px, 15vw, 80px);
-    font-size: clamp(12px, 1vw, 16px);
+    font-size: clamp(12px, 3vw, 16px);
   }
   #voteBtn {
     height: clamp(45px, 15vw, 70px);

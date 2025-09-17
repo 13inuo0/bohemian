@@ -6,8 +6,7 @@
   height: 100vh; /* 원하는 섹션 높이 */
   overflow: hidden;
   background-color: #000000;
-  background: url(../img/review/footer_bg.jpg) center bottom / auto 110%
-    no-repeat;
+  background: url(../img/review/footer_bg.jpg) center bottom / cover no-repeat;
   /* background-size: 110% auto; */
 }
 .flowsection-bg {
@@ -86,7 +85,22 @@
   background-color: rgba(0, 0, 0, 0);
   width: 30px;
   height: 30px;
-  font-size: clamp(16px, 2vw, 25px);
+  /* font-size: clamp(16px, 2vw, 25px); */
+  font-size: 25px;
   color: #b78017;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .review-wrap > form > .reC-input > input {
+    padding-right: clamp(70px, 3vw, 100px);
+  }
+  #reviewBtn {
+    right: 11%;
+  }
+  .reC-input {
+    width: 60%;
+  }
+  .review-wrap > form > .reC-input > input {
+    height: clamp(48px, 18vw, 80px);
+  }
 }
