@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
     },
   });
   // slide thum에 클릭한 이미지로 변경
-  const thumbImg = document.querySelectorAll(".swiper-slide img");
+  const thumbImg = document.querySelectorAll(".bestScene-slide img");
   const mainImg = document.querySelector(".best-mainImg img");
   const bestDscr = document.querySelectorAll(".best-txt-box");
   const pagenationLeft = document.getElementById("best-left");

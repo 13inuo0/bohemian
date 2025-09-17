@@ -62,27 +62,27 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <!-- 영역별 css -->
-<link rel="stylesheet" href="./css/header.css">
-<link rel="stylesheet" href="./css/count_about.css">
-<link rel="stylesheet" href="./css/cast.css">
-<link rel="stylesheet" href="./css/bestscene.css">
-<link rel="stylesheet" href="./css/screen_sound.css">
-<link rel="stylesheet" href="./css/song_voting.css.css">
-<link rel="stylesheet" href="./css/review.css">
-<link rel="stylesheet" href="./css/event_footer.css">
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/count_about.css" />
+    <link rel="stylesheet" href="./css/cast.css" />
+    <link rel="stylesheet" href="./css/bestscene.css" />
+    <link rel="stylesheet" href="./css/screen_sound.css" />
+    <link rel="stylesheet" href="./css/song_voting.css" />
+    <link rel="stylesheet" href="./css/review.css" />
+    <link rel="stylesheet" href="./css/event_footer.css" />
 
     <!-- js -->
-    <script src="./js/jquery-1.12.3/"></script>
-   
+    <script src="./js/jquery-1.12.3.js"></script>
+
     <!-- 영역별 js -->
-<script src="js/header.js"></script>
-<script src="js/count_about.js"></script>
-<script src="js/cast.js"></script>
-<script src="js/bestscene.js"></script>
-<script src="js/screen_sound.js"></script>
-<script src="js/song_voting.js"></script>
-<script src="js/review.js"></script>
-<script src="js/event_footer.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/count_about.js"></script>
+    <script src="js/cast.js"></script>
+    <script src="js/bestscene.js"></script>
+    <script src="js/screen_sound.js"></script>
+    <script src="js/song_voting.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/event_footer.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 폰트어썸 -->
@@ -96,12 +96,563 @@
   </head>
   <body>
     <!-- 상단 -->
+    <header class="header">
+      <!-- header-box -->
+      <div class="header-box">
+        <!-- 로고 -->
+        <a href="#" class="header-logo">
+          <img
+            src="img/header/web-app-manifest-192x192.png"
+            alt="mini-project"
+          />
+        </a>
+        <!-- 메뉴 -->
+        <nav class="header-nav">
+          <ul class="header-topmenu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OVERVIEW</a></li>
+            <li><a href="#">CAST</a></li>
+            <li><a href="#">PHOTO</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">SHOP</a></li>
+          </ul>
+        </nav>
+        <!-- 햄버거 메뉴 버튼 -->
+        <button class="header-hamburger" id="header-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!--  모바일일때 사이드 메뉴 -->
+        <div class="header-mobile-menu" id="headr-mobile-Menu">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OVERVIEW</a></li>
+            <li><a href="#">CAST</a></li>
+            <li><a href="#">PHOTO</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">SHOP</a></li>
+          </ul>
+        </div>
+        <!-- 오버레이 -->
+        <div class="header-overlay" id="header-overlay"></div>
+        <!-- tiket -->
+        <button class="header-ticket">Get ticket</button>
+      </div>
+    </header>
+    <div class="header-gif">
+      <img src="img/header/intro (1).webp" alt="gif" />
+      <!-- 예매하기 버튼 -->
+      <button class="header-button">예매하기 ></button>
+    </div>
+
     <!-- 카운트다운 및 영화소개 -->
-    <!-- CAST -->
+    <div class="header-count-img">
+      <img src="img/cast/headerbg.png" alt="count" />
+      <div class="count-content">
+        <h1 id="headline">9월 1일(월) 저녁 9시 재개봉</h1>
+
+        <div id="countdown">
+          <ul>
+            <li><span id="days">21</span>days</li>
+            <li><span id="hours">6</span>Hours</li>
+            <li><span id="minutes">16</span>Minutes</li>
+            <li><span id="seconds">11</span>Seconds</li>
+          </ul>
+        </div>
+        <button class="count-button">예매하기</button>
+        <!-- 영화 소개 -->
+        <div class="movie-card">
+          <div class="movie-card-left">
+            <h1 class="card-title">보헤미안 랩소디</h1>
+            <h2>2018 12+ 드라마 장르 134분</h2>
+            <p class="card-text">
+              파란만장했던 퀸의 음악적 성공과 평탄치 않았던 멤버들의 개인사를
+              담은 전기 영화. <br />수줍음 많은 사회 부적응자였던 프레디
+              머큐리가 퀸의 리드 싱어이자 시대의 아이콘으로 탈바꿈하는 과정을
+              그렸다.
+            </p>
+            <h2 class="card-text-itr">출연진</h2>
+            <p class="card-text">
+              라미 말렉, 루시 보인튼, 귈림 리, 벤 하디, 조셉 마젤로, 에이든 길런
+              , 엘렌 리치, 톰 홀랜더, 마이크 마이어스 및 아론 맥커스커
+            </p>
+          </div>
+          <div class="movie-card-right">
+            <div class="card-right-img">
+              <img
+                src="img/count_about/move-card-img.png"
+                alt="move-card-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- !! CAST !! -->
+    <!-- cast title -->
+    <div class="cast-wrap">
+      <div class="cast-title">
+        <h1>CAST</h1>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-inner">
+            <img
+              src="img/cast/freddiemercury.png"
+              alt="freddiemercury img"
+              class="card-image front"
+            />
+
+            <img
+              src="img/cast/ramimalek1.png"
+              alt="ramimalek introduce img"
+              class="card-image back"
+            />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <img
+              src="img/cast/brianmay.png"
+              alt="brianmay img"
+              class="card-image front"
+            />
+
+            <img
+              src="img/cast/gwilymlee1.png"
+              alt="gwilymlee introduce img"
+              class="card-image back"
+            />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <img
+              src="img/cast/rogertaylor.png"
+              alt="rogertaylor img"
+              class="card-image front"
+            />
+
+            <img
+              src="img/cast/benhard1.png"
+              alt="benhard introduce img"
+              class="card-image back"
+            />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <img
+              src="img/cast/johndeacon.png"
+              alt="johndeacon img"
+              class="card-image front"
+            />
+
+            <img
+              src="img/cast/josephmazzello1.png"
+              alt="josephmazzello introduce img"
+              class="card-image back"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 768 -->
+      <div class="tablet">
+        <div class="mobile-card-container">
+          <div class="mobil-front">
+            <img src="img/cast/freddiemercury.png" alt="freddiemercury img" />
+
+            <img src="img/cast/brianmay.png" alt="brianmay img" />
+
+            <img src="img/cast/rogertaylor.png" alt="rogertaylor img" />
+
+            <img src="img/cast/johndeacon.png" alt="johndeacon img" />
+          </div>
+          <div class="mobil-back">
+            <img src="img/cast/rami768.png" alt="ramimalek introduce 768" />
+
+            <img src="img/cast/gwily768.png" alt="gwilymlee introduce-768" />
+
+            <img src="img/cast/ben768.png" alt="ben introduce-768" />
+
+            <img src="img/cast/john768.png" alt="john introduce-768" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-swiper">
+        <!-- 390 프론트 영역: 스와이퍼 슬라이드 -->
+        <div class="swiper front-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/cast/freddiemercury.png" alt="freddiemercury img" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/cast/brianmay.png" alt="brianmay img" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/cast/rogertaylor.png" alt="rogertaylor img" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/cast/johndeacon.png" alt="johndeacon img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 백 이미지 -->
+        <div class="mobile-swiper-back">
+          <img src="img/cast/rami768.png" />
+          <img src="img/cast/gwily768.png" />
+          <img src="img/cast/ben768.png" />
+          <img src="img/cast/john768.png" />
+        </div>
+      </div>
+    </div>
+
     <!-- 명장면 다시보기 -->
+    <div class="bestscene-wrap">
+      <div class="best-mainImg">
+        <img src="img/bestscene/common (6).jpg" alt="still1" class="show" />
+      </div>
+
+      <div class="best-txt-bg">
+        <div class="best-txt-box band show">
+          <h1>명장면 다시보기</h1>
+          <h3>밴드 결성</h3>
+          <p>
+            프레디 머큐리가 브라이언 메이, 로저 테일러, 존 디콘과 함께
+            '퀸'이라는 밴드를 결성하는 곳에서 시작됩니다. 그들의 독창적인 음악과
+            무대 퍼포먼스는 전 세계에 큰 인기를 끌게 되고, 그들은 빠르게 스타의
+            반열에 오르게 됩니다.
+          </p>
+        </div>
+        <div class="best-txt-box conflict">
+          <h1>명장면 다시보기</h1>
+          <h3>프레디 머큐리의 갈등</h3>
+          <p>
+            프레디 머큐리는 자신의 성적 지향성에 대한 혼란과 밴드 내의 갈등을
+            겪게 됩니다. 그러나 그는 이런 어려움을 극복하고, '보헤미안 랩소디'와
+            같은 히트곡을 창작하며 락의 전설로 거듭나게 됩니다. 이 과정에서 그는
+            자신만의 음악적 색깔을 찾아나가며, 그의 고민과 갈등은 그의 음악에
+            깊은 감정을 불어넣습니다.
+          </p>
+        </div>
+        <div class="best-txt-box aids">
+          <h1>명장면 다시보기</h1>
+          <h3>에이즈 진단과 그 이후의 삶</h3>
+          <p>
+            프레디의 삶은 에이즈 진단을 받고 급변하게 됩니다. 그는 병과의 싸움을
+            시작하면서도 무대에 서는 것을 멈추지 않습니다. 그의 음악에 대한
+            열정과 사랑은 그를 끝까지 지탱해 주며, 그는 자신의 음악을 통해
+            세상에 영향을 미치는 데 결정적인 역할을 합니다.
+          </p>
+        </div>
+        <div class="best-txt-box live-aid">
+          <h1>명장면 다시보기</h1>
+          <h3>"라이브 에이드(Live Aid)" 공연장면</h3>
+          <p>
+            영화의 클라이막스로, 프레디 머큐리(란미 말렉)가 라이브 에이드에서
+            '보헤미안 랩소디'등 퀸의 대표곡을 공연하는 장면입니다. 란미 말렉의
+            탁월한 연기력과 함께, 감독의 섬세한 연출이 돋보이는 순간이며,
+            관객들에게 마치 실제 공연을 보는 듯한 생생함을 전달합니다.
+          </p>
+        </div>
+        <!-- play -->
+        <div class="best-play-box">
+          <div class="button-box">
+            <i class="fa-regular fa-circle-play"></i>
+            <i class="fa-regular fa-circle-pause"></i>
+          </div>
+          <div class="play-title">Bohemian Rhapsody ( Live Aid )</div>
+          <div class="play-stick">
+            <div class="play-progress"></div>
+          </div>
+        </div>
+      </div>
+      <!-- audio -->
+      <audio
+        src="img/screen_sound/Bohemian-rhapsody.mp3"
+        id="bohemian-bgm"
+      ></audio>
+      <!-- Swiper -->
+      <div class="swiper bestScene-slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide first-slide">
+            <img src="img/bestscene/common (6).jpg" alt="slide1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/bestscene/conflict.jpg" alt="slide2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/bestscene/still3.jpg" alt="slide3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/bestscene/common (2).jpg" alt="slide4" />
+          </div>
+        </div>
+      </div>
+      <!-- pagenation -->
+      <div class="best-pagenation">
+        <button id="best-left">
+          <img src="img/bestscene/pagenation1.png" alt="arrow" />
+        </button>
+        <button id="best-right">
+          <img src="img/bestscene/pagenation2.png" alt="arrow" />
+        </button>
+      </div>
+    </div>
     <!-- 스크린 및 돌비 사운드  -->
-    <!-- 노래 투표 -->
-    <!-- 리뷰 및 기대평 -->
-    <!-- 이벤트 및 하단 -->
+    <div class="screen-wrap">
+      <div class="screen-title"><h1>SCREEN</h1></div>
+      <div class="screen-iphone">
+        <img
+          src="img/bestscene/iphone-screen.png"
+          alt="iphone"
+          id="screen-iphone"
+        />
+        <img
+          src="img/bestscene/still3.jpg"
+          alt="scrollImg"
+          id="iphoneScrollImg"
+        />
+      </div>
+      <div class="screen-20m-txt screen-txt">
+        <p>"<span>20m</span> 대형 스크린에서 느끼는 프레디의 무대 매력"</p>
+      </div>
+      <div class="screen-cinema">
+        <img
+          src="img/bestscene/screen-cinema.png"
+          alt="cinema"
+          id="screen-cinema"
+        />
+      </div>
+    </div>
+    <!--  -->
+    <div class="screen-speaker-wrap">
+      <div class="screen-homes">
+        <div class="screen-homes-tile">
+          <h1>HOME SPEAKER</h1>
+        </div>
+        <div class="screen-homes-img">
+          <img
+            src="img/bestscene/homespeaker.png"
+            alt="homespeaker"
+            id="homespeaker"
+          />
+        </div>
+      </div>
+      <div class="screen-dolby-txt screen-txt">
+        <p>"<span>돌비 사운드</span> 로 듣는 Live Aid"</p>
+      </div>
+      <div class="screen-dolby">
+        <img src="img/bestscene/dolby.png" alt="dolby" id="dolby" />
+      </div>
+    </div>
+    <!-- 투표 폼 -->
+    <div class="voteRadio-wrap">
+      <form>
+        <!-- 질문 -->
+        <div class="voteQ-txt-wrap">
+          <div class="vote-Qtxt">
+            <span class="voteSection">VOTE</span>
+            <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
+          </div>
+        </div>
+        <div class="voteRadio-selects">
+          <input type="radio" id="vote-option1" name="vote-song" value="1" />
+          <label for="vote-option1">Bohemian Rhapsody</label>
+          <input type="radio" id="vote-option2" name="vote-song" value="1" />
+          <label for="vote-option2">We Are The Champions</label>
+          <input type="radio" id="vote-option3" name="vote-song" value="1" />
+          <label for="vote-option3">Don't Stop Me Now</label>
+        </div>
+        <input type="submit" value="투표하기" id="voteBtn1" />
+      </form>
+    </div>
+
+    <!-- 투표결과 -->
+    <div class="voteQ-wrap">
+      <div class="voteQ-inner">
+        <!-- 질문 -->
+        <div class="voteQ-txt-wrap">
+          <div class="vote-Qtxt">
+            <span class="voteSection">VOTE</span>
+            <p class="voteQuestion">가장 기대되는 Queen 의 노래는?</p>
+          </div>
+        </div>
+        <!-- 바 그래프 전체 -->
+        <ul id="voteGraph-wrap">
+          <li class="vote-list">
+            <div class="voteGraph-bg">
+              <progress
+                id="voteGraph"
+                class="voteGraph"
+                value="0"
+                max="100"
+              ></progress>
+              <!-- 타이틀 명 -->
+              <div class="song-title-txt">
+                <span class="song-title">Bohemian Rhapsody</span>
+                <span id="vote-percent">0%</span>
+              </div>
+            </div>
+          </li>
+          <li class="vote-list">
+            <div class="voteGraph-bg">
+              <progress
+                id="voteGraph2"
+                class="voteGraph"
+                value="0"
+                max="100"
+              ></progress>
+              <!-- 타이틀 명 -->
+              <div class="song-title-txt">
+                <span class="song-title">We Are The Champions</span>
+                <span id="vote-percent2">0%</span>
+              </div>
+            </div>
+          </li>
+          <li class="vote-list">
+            <div class="voteGraph-bg">
+              <progress
+                id="voteGraph3"
+                class="voteGraph"
+                value="0"
+                max="100"
+              ></progress>
+              <!-- 타이틀 명 -->
+              <div class="song-title-txt">
+                <span class="song-title">Don't Stop Me Now</span>
+                <span id="vote-percent3">0%</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- 투표하기 버튼 -->
+        <button id="voteBtn">
+          투표로 돌아가기 <i class="fa-solid fa-rotate-left"></i>
+        </button>
+      </div>
+    </div>
+    <!-- 리뷰 및 기대평 (min✨) -->
+    <section id="flowSection">
+      <div class="flowsection-bg">
+        <div class="review-wrap">
+          <form>
+            <div class="reC-input">
+              <input
+                type="text"
+                placeholder="영화 [보헤미안 랩소디]의 기대평을 작성해주세요."
+              />
+              <!-- 기대평의 제한 글자 수는 20-30자 -->
+              <button id="reviewBtn">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이벤트 및 하단 (min✨)-->
+    <section class="event-footer-wrap">
+      <!-- 배경 오버레이 -->
+      <div class="ft-bg">
+        <!-- 이벤트  -->
+        <div class="event-wrap">
+          <div class="event-content">
+            <img
+              class="event-imgA"
+              src="img/event_footer/event2-Silhouette.png"
+              alt="보헤미안 랩소디 영화 이벤트 실루엣"
+            />
+            <img
+              class="event-imgB"
+              src="img/event_footer/event-contents.png"
+              alt="보헤미안 랩소디 영화 이벤트"
+            />
+          </div>
+          <div class="event-content2">
+            <img
+              class="eventC-imgA"
+              src="img/event_footer/Group 331.png"
+              alt="세로형 실루엣"
+            />
+          </div>
+        </div>
+
+        <!-- 하단 -->
+        <div class="ft-wrap">
+          <div class="ft-inner">
+            <!-- 왼쪽 하단 타이틀 -->
+            <div class="ft-title-wrap">
+              <p class="ft-title">mini project</p>
+              <p class="ft-copy">© COPYRIGHT ALL RIGHTS RESERVED</p>
+            </div>
+
+            <!-- 팀원 소개 -->
+            <div class="ft-name-wrap">
+              <ul class="ft-name-list">
+                <li>kim Nohyeun</li>
+                <li>Kim Minseung</li>
+                <li>Jin Dongmi</li>
+                <li>Choe Jungeun</li>
+              </ul>
+            </div>
+
+            <!-- 구독 영역 -->
+
+            <div class="ft-news-wrap">
+              <p class="ft-news-title">영화 정보 받아보기</p>
+              <p class="ft-news-desc">
+                최신 영화 소식과 이벤트를 이메일로 받아보세요.
+              </p>
+
+              <form class="ft-form">
+                <input
+                  id="ft-email"
+                  type="email"
+                  placeholder="이메일 주소를 입력하세요"
+                  required
+                />
+                <button type="submit" aria-label="구독 신청">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- 구분선 -->
+          <hr class="ft-divider" />
+          <ul class="ft-sns">
+            <li>
+              <a href="#"
+                ><img
+                  class="fa-brands"
+                  src="img/event_footer/icon-twitter 1.png"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  class="fa-brands"
+                  src="img/event_footer/youtube icon 2.png"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  class="fa-brands"
+                  src="img/event_footer/instagram icon 3.png"
+                  alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

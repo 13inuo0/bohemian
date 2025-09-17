@@ -12,15 +12,17 @@ body {
   color: #fff;
 }
 
+.cast-wrap {
+  padding-bottom: 10%;
+}
 .card-container {
   position: relative;
   width: 90%;
   max-width: 1200px;
   height: 400px;
-  margin: 50px auto;
+  margin: auto;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+
   gap: 10px;
 }
 
@@ -73,7 +75,6 @@ body {
   transition: opacity 0.5s;
 }
 
-
 /* 초기 이미지 (앞면) */
 .card-image.front {
   opacity: 1;
@@ -110,14 +111,56 @@ body {
   transform: rotateY(0deg);
 }
 
-.mobile-card-container {
+.tablet {
   display: none;
 }
 
 .mobile-swiper {
+  position: relative;
   display: none;
+  margin: auto;
+  width: 100%;
+  /* max-width: 450px; */
+  /* height: 100vw; */
+  overflow: hidden;
+  border-radius: 30px;
 }
 
+.front-swiper {
+  width: 100%;
+}
+
+.front-swiper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mobile-swiper-back {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.mobile-swiper-back img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-swiper-back img.active {
+  opacity: 1;
+}
 @media screen and (max-width: 1340px) {
   .card-container {
     height: 29.85vw;
@@ -126,13 +169,25 @@ body {
 
 /* 768px 이하: CAST 카드 2열 */
 @media (max-width: 768px) {
+  .cast-title  h1{
+    font-size: 70px;
+  }
   .card-container {
     display: none;
   }
-
+  .cast-wrap {
+    height: 900px;
+  }
+  .tablet {
+    display: block;
+    height: 100vw;
+    /* padding: 10% ; */
+  }
   .mobile-card-container {
     width: 80%;
-    height: auto;
+    max-width: 450px;
+    /* height: 100%; */
+    /* height: 100vh; */
     position: relative;
     display: block;
     margin: auto;
@@ -162,7 +217,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     z-index: 9999;
   }
 
@@ -176,66 +231,35 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
+
+    border-radius: 40px;
+    overflow: hidden;
   }
 
   .mobil-back img.active {
     opacity: 1;
   }
-
-
 }
-@media (max-width: 390px) {
- .cast-title > h1{
-  font-size: 40px;
- }
-
-  .mobile-card-container {
+@media (max-width: 600px) {
+  .cast-wrap {
+    height: 130vw;
+    min-height: 700px;
+  }
+  .tablet {
     display: none;
   }
-
   .mobile-swiper {
-    position: relative;
     display: block;
-    width: 100%;
-    height: 100vw;
+    width: 60%;
+    max-width: 400px;
+    min-width: 320px;
   }
-
-  .front-swiper {
-    width: 80%;
-  }
-
-  .front-swiper img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .mobile-swiper-back {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    height: 100%;
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-
-  .mobile-swiper-back img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .mobile-swiper-back img.active {
-    opacity: 1;
+  .cast-title > h1 {
+    font-size: 50px;
   }
 }
-
-
-
+@media (max-width: 390px) {
+  .cast-title > h1 {
+    font-size: 40px;
+  }
+}
