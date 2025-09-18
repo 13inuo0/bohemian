@@ -2,11 +2,14 @@
 
 .header-count-img {
   width: 100%;
+
   position: relative;
   padding: 10% 0;
+  background-color: red;
 }
 .header-count-img > img {
   width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
   position: absolute;
@@ -14,18 +17,20 @@
   left: 0;
 }
 .count-content {
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   position: relative;
 
-  /* margin: auto; */
+  margin: auto;
   /* margin-top: 10%; */
   text-align: center;
-  /* background-color: red; */
   z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.count-bg2 {
+  display: none;
 }
 /* 재계봉 */
 #headline {
@@ -83,8 +88,8 @@
 }
 /* 영화소개 */
 .movie-card {
-  width: 85%;
-  min-width: 500px;
+  width: 80%;
+  /* min-width: 500px; */
   /* margin: 0 auto; */
   background-color: #d8d8d8;
   opacity: 87%;
@@ -95,6 +100,7 @@
   border-radius: 25px;
   border: 4px solid rgba(0, 0, 0, 0.2);
   scroll-margin-top: 200px;
+  justify-content: space-between;
 }
 .movie-card-left {
   width: 60%;
@@ -102,8 +108,8 @@
 }
 .movie-card-right {
   width: 40%;
-  max-width: 310px;
-  min-width: 240px;
+  /* max-width: 310px;
+  min-width: 240px; */
 }
 .card-right-img {
   width: 100%;
@@ -149,27 +155,29 @@
 }
 @media all and (max-width: 768px) {
   .movie-card {
-    width: 100%;
+    width: 60%;
+    min-width: 320px;
+    flex-direction: column-reverse;
     scroll-margin-top: 500px;
   }
-  .movie-card-right {
-    width: 40%;
-
-    min-width: 200px;
+  .movie-card-right,
+  .movie-card-left {
+    width: 100%;
   }
   .card-text {
     font-size: 13px;
   }
+  .card-title{
+    margin-top: 20px;
+  }
 }
 @media all and (max-width: 580px) {
-  .movie-card {
-    width: 65%;
-    max-width: 480px;
-    min-width: 320px;
-
-    flex-direction: column-reverse;
-    padding: 20px;
+  .header-count-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .movie-card-right {
     width: 100%;
   }
@@ -190,7 +198,8 @@
 }
 @media screen and (max-width: 390px) {
   .movie-card {
-    margin: auto;
-    min-width: 312px;
+    padding: 20px;
+  } .card-title{
+    margin-top: 12px;
   }
 }
