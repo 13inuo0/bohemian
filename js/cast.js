@@ -112,10 +112,9 @@ window.addEventListener("load", () => {
         backContainer.style.opacity = "1";
       }
     });
-  });
-
-  img.addEventListener("mouseleave", () => {
-    backImages1.forEach((backImg) => backImg.classList.remove("active"));
-    backContainer.style.opacity = "0";
+    img.addEventListener("mouseleave", () => {
+      backImages1.forEach((backImg) => backImg.classList.remove("active"));
+      backContainer.style.opacity = "0";
+    });
   });
 });
