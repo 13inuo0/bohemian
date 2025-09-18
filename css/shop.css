@@ -32,6 +32,20 @@ header {
   display: none;
 }
 
+/* quick menu */
+.shop-quick-menu{
+  position: fixed;
+  width: 3.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 1.5%;
+  bottom: 2%;
+  z-index: 999;
+}
+ 
+
 /* header-left */
 .shop-header-left {
   width: 60%;
@@ -42,7 +56,7 @@ header {
   display: flex;
   align-items: center;
   width: 80%;
-  padding-top: 8%;
+  padding-top: 5%;
 }
 
 /* search icon */
@@ -92,7 +106,8 @@ header {
 .shop-banner {
   background-color: #000000;
   width: 100%;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
+  margin-top: -1%;
 }
 
 .banner-text {
@@ -249,6 +264,10 @@ header {
 }
 
 /* swiper */
+.swiper-wrapper{
+  margin-top: 8%;
+}
+
 .shop-Swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -401,22 +420,6 @@ footer {
   .top-price3 {
     font-size: 12px;
     margin-top: 2%;
-  }
-
-  /* middle banner */
-  .center-banner-wrap {
-    height: auto;
-  }
-
-  .center-banner-img {
-    width: 100%;
-  }
-
-  .center-banner-img img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    display: block;
   }
 
   footer {

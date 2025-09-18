@@ -1,4 +1,12 @@
 window.addEventListener("load", function () {
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
   const progress = document.getElementById("voteGraph");
   const percent = document.getElementById("vote-percent");
   const progress2 = document.getElementById("voteGraph2");

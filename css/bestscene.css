@@ -104,7 +104,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10% 5%;
+  padding: 7% 5%;
 }
 
 /* txt box */
@@ -655,7 +655,7 @@ img {
   }
   .screen-title h1 {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
     padding: 120px 0;
   }
   #screen-iphone {
@@ -672,7 +672,7 @@ img {
   /* speaker */
   .screen-homes h1 {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 120px;
   }
   .screen-homes {

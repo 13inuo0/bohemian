@@ -9,7 +9,8 @@ window.addEventListener("load", () => {
     document.body.classList.toggle("nav-open", !open);
   });
 
-   var swiper = new Swiper(".shop-Swiper", {
+   var swiper = new Swiper(".shop-Swiper", { 
+     loop: true, 
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,

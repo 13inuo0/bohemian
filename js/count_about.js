@@ -1,4 +1,12 @@
 window.addEventListener("load", function () {
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
   (function () {
     const second = 1000,
       minute = second * 60,
@@ -21,7 +29,7 @@ window.addEventListener("load", function () {
     }
     //end
 
-    const countDown = new Date("09/20/2025").getTime(),
+    const countDown = new Date("09/25/2025").getTime(),
       x = setInterval(function () {
         const now = new Date().getTime(),
           distance = countDown - now;
@@ -49,4 +57,11 @@ window.addEventListener("load", function () {
         //seconds
       }, 0);
   })();
+  const video = document.querySelector("video");
+
+// 음소거 해제
+document.addEventListener("click", () => {
+  video.muted = false;
+  video.play();
+}, { once: true });
 });

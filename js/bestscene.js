@@ -1,4 +1,12 @@
 window.addEventListener("load", () => {
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
   const swiper = new Swiper(".bestScene-slide", {
     loop: true,
     slidesPerView: 3,

@@ -1,5 +1,13 @@
   window.addEventListener("load", () => {
-  const cards = document.querySelectorAll(".card");
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
+    const cards = document.querySelectorAll(".card");
   const cardInners = document.querySelectorAll(".card-inner");
   let activeCard = null;
 

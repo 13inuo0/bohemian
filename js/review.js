@@ -1,4 +1,12 @@
 window.addEventListener("load", function () {
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
   const flowST = document.getElementById("flowSection");
 
   //   해당 섹션이 html에 없을 때 경고하는 문구 표시

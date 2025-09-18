@@ -1,4 +1,12 @@
 window.addEventListener("DOMContentLoaded", function () {
+  const aTag = this.document.querySelectorAll("a");
+  aTag.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (a.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+    });
+  });
   const hamburger = document.querySelector("#header-hamburger");
   const mobileMenu = document.querySelector(".header-mobile-menu");
   const overlay = document.querySelector("#header-overlay");
@@ -21,28 +29,8 @@ window.addEventListener("DOMContentLoaded", function () {
     overlay.classList.remove("active");
     document.body.style.overflow = ""; // 스크롤 다시 활성화
   });
-  // header mp3 play
-  const bgm = document.getElementById("bgm");
-  bgm.volume = 0.4;
 
-  // 모바일에서 터치 시 음소거 해제
-  document.addEventListener(
-    "touchstart",
-    () => {
-      bgm.muted = false;
-      bgm.play();
-    },
-    { once: true }
-  );
-  //웹에서 아무데나 클릭시 음소거 해제
-  document.addEventListener(
-    "click",
-    () => {
-      bgm.muted = false;
-      bgm.play();
-    },
-    { once: true }
-  );
+
   // 스크롤 이벤트
   const gifHeight = this.document.getElementById("gif").offsetHeight;
 
