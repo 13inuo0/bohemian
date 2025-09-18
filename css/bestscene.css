@@ -560,6 +560,8 @@ img {
   }
   #iphoneScrollImg {
     top: 150px;
+    will-change: transform, opacity;
+}
   }
   .screen-txt {
     height: 250px;

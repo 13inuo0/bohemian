@@ -47,7 +47,7 @@ body {
   color: #fff;
 }
 
-.cast-title h1{
+.cast-title h1 {
   font-size: 64px;
 }
 
@@ -171,12 +171,11 @@ body {
 
 /* 768px 이하: CAST 카드 2열 */
 @media (max-width: 768px) {
-  .cast-wrap{
-scroll-margin-top: 60px;
+  .cast-wrap {
+    scroll-margin-top: 60px;
   }
-  .cast-title  h1{
+  .cast-title h1 {
     font-size: 38px;
-    
   }
   .card-container {
     display: none;
@@ -199,7 +198,7 @@ scroll-margin-top: 60px;
     margin: auto;
   }
 
- /* 앞면: 2×2 썸네일 그리드 */
+  /* 앞면: 2×2 썸네일 그리드 */
   .mobil-front {
     display: flex;
     flex-wrap: wrap;
@@ -263,5 +262,9 @@ scroll-margin-top: 60px;
 @media (max-width: 390px) {
   .cast-title > h1 {
     font-size: 24px;
+  }
+
+  .cast-title {
+    margin-top: 60px;
   }
 }
