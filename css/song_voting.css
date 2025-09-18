@@ -246,6 +246,9 @@
   .voteSection {
     font-size: 24px;
   }
+   .voteRadio-wrap {
+    scroll-margin-top: 90px;
+  }
   .voteQuestion {
     font-size: 21px;
   }

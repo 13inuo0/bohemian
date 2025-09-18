@@ -1,4 +1,4 @@
-  window.addEventListener("load", () => {
+window.addEventListener("load", () => {
   const aTag = this.document.querySelectorAll("a");
   aTag.forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -7,7 +7,7 @@
       }
     });
   });
-    const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card");
   const cardInners = document.querySelectorAll(".card-inner");
   let activeCard = null;
 
@@ -86,12 +86,6 @@
   const backImages1 = document.querySelectorAll(".mobile-swiper-back img");
   const backContainer = document.querySelector(".mobile-swiper-back");
 
-  // 슬라이드 변경 시 기존 호버된 백 이미지 비활성화
-  
-// 이벤트 등록은 swiper 인스턴스 생성 후 바로
-
-
-
   frontSwiper.on("slideChangeTransitionStart", () => {
     console.log("slide changed!");
     backImages1.forEach((backImg) => backImg.classList.remove("active"));
@@ -103,20 +97,25 @@
   frontSlides.forEach((slide) => {
     const img = slide.querySelector("img");
 
-    img.addEventListener("mouseenter", () => {
+    img.addEventListener("click", () => {
       const index = slide.getAttribute("data-swiper-slide-index"); // 원본 인덱스
-      console.log("hover", index);
+      // console.log("clicked", index);
 
       backImages1.forEach((backImg, i) => {
         backImg.classList.toggle("active", i === Number(index));
       });
 
-      backContainer.style.opacity = "1";
+      if (backContainer.style.opacity === "1") {
+        backContainer.style.opacity = "0";
+        backImages1.forEach((backImg) => backImg.classList.remove("active"));
+      } else {
+        backContainer.style.opacity = "1";
+      }
     });
+  });
 
-    img.addEventListener("mouseleave", () => {
-      backImages1.forEach((backImg) => backImg.classList.remove("active"));
-      backContainer.style.opacity = "0";
-    });
+  img.addEventListener("mouseleave", () => {
+    backImages1.forEach((backImg) => backImg.classList.remove("active"));
+    backContainer.style.opacity = "0";
   });
 });

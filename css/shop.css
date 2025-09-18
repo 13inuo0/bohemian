@@ -350,6 +350,12 @@ footer {
   color: #ce0dc5;
 }
 
+@media(max-width:1170px){
+  .shop-quick-menu{
+    width: 10%;
+}
+}
+
 /* 768px 이하 (태블릿) 반응형 */
 @media (max-width: 768px) {
   header {
@@ -357,7 +363,9 @@ footer {
     justify-content: space-between;
     box-shadow: 0 1px 0 #000;
   }
-
+  .shop-quick-menu{
+    width: 7%;
+}
   .shop-header-left {
     width: auto;
     flex: 1 1 auto;
@@ -449,6 +457,9 @@ footer {
     position: relative;
   }
 
+  .shop-quick-menu{
+    width: 12%;
+}
   .hamburger,
   .hamburgerBtn,
   .hamburgerlist {
