@@ -68,10 +68,10 @@
 .reC-input input {
   color: #111111;
 }
-/* .reC-input input::placeholder {
-  color: #111111;
-  font: 400 16px "Poppins", sans-serif;
-} */
+.reC-input input::placeholder {
+  font-size: 18px;
+
+}
 .reC-input input:focus {
   outline: none;
   box-shadow: 0 0 5px #b78017;
