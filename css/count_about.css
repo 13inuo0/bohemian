@@ -190,7 +190,7 @@
 }
 @media screen and (max-width: 390px) {
   .movie-card {
-   
+    margin: auto;
     min-width: 312px;
   }
 }
