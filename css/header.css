@@ -49,9 +49,11 @@
 .header-topmenu > li {
   width: calc(100% / 6);
 }
-.header-topmenu > li:first-child > a {
+
+.header-topmenu > li > a.active{
   color: #fdc702;
 }
+
 .header-topmenu > li > a {
   width: 100%;
   display: block;
@@ -60,6 +62,7 @@
   font-weight: 600;
   color: #fff;
   line-height: 80px;
+
 }
 /* 햄버거 메뉴 */
 #header-hamburger {

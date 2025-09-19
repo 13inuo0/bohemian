@@ -32,14 +32,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
   // 스크롤 이벤트
-  const gifHeight = this.document.getElementById("gif").offsetHeight;
-
   setTimeout(() => {
-    window.scrollBy({
-      top: gifHeight,
-      behavior: "smooth",
-    });
-  }, 17000);
+  if (window.pageYOffset === 0) {
+    const gif = document.getElementById("gif");
+    if (gif) {
+      window.scrollBy({
+        top: gif.offsetHeight,
+        behavior: "smooth",
+      });
+    }
+  }
+}, 18000);
 
   // // gotop 버튼
   //  const goTopBtn = this.document.querySelector(".gotop-btn");
@@ -58,4 +61,15 @@ window.addEventListener("DOMContentLoaded", function () {
   //     goTopBtn.style.display = "none";
   //   }
   // });
+
+  // menu active
+  const selectMenu = document.querySelectorAll(".header-topmenu > li > a")
+  selectMenu.forEach((select)=>{
+    select.addEventListener("click",()=>{
+      selectMenu.forEach((s)=>{
+        s.classList.remove("active")
+      })
+      select.classList.add("active")
+    })
+  })
 });

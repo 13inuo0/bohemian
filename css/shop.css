@@ -554,6 +554,17 @@ footer {
     padding-bottom: 4%;
   }
 
+   .new-inner .bottom-list,
+  .music-inner .bottom-list,
+  .acc-inner .bottom-list {
+    display: none;
+  }
+
+  .new-inner .top-list li:nth-child(n + 4),
+  .music-inner .top-list li:nth-child(n + 4),
+  .acc-inner .top-list li:nth-child(n + 4) {
+    display: none;
+  }
   /* 색상칩 & 텍스트 */
   .color-boxes {
     padding: 6px 0 4px;
@@ -616,3 +627,4 @@ footer {
     font-size: 7.5px;
   }
 }
+  

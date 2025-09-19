@@ -14,7 +14,7 @@ img {
 /* quick */
 .quick-menu {
   position: fixed;
-  width: 3.5%;
+  width: 3.5% !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@ img {
   color: #000;
 }
 @keyframes floatY {
-   0% {
+  0% {
     transform: translate3d(0, 0, 0);
   }
   50% {
@@ -411,7 +411,7 @@ img {
   .best-play-box .button-box i {
     font-size: 45px;
   }
-  #q{
+  #q {
     font-size: 14px;
   }
 }
@@ -438,7 +438,7 @@ img {
   .best-pagenation button img {
     width: 40px;
   }
-  .quick-menu{
+  .quick-menu {
     width: 5%;
   }
 }
@@ -508,9 +508,9 @@ img {
 }
 @media screen and (max-width: 768px) {
   /* best */
-  #photo{
+  #photo {
     margin-top: 10%;
-     scroll-margin-top: 150px;
+    scroll-margin-top: 150px;
   }
   .best-txt-bg {
     padding: 7% 4%;
@@ -561,8 +561,8 @@ img {
   #iphoneScrollImg {
     top: 150px;
     will-change: transform, opacity;
-}
   }
+
   .screen-txt {
     height: 250px;
   }
@@ -577,7 +577,7 @@ img {
   .screen-homes {
     padding: 150px 0;
   }
-   .quick-menu{
+  .quick-menu {
     width: 7%;
   }
 }
@@ -647,7 +647,7 @@ img {
   .best-mainImg::before {
     background: none;
   }
-  .quick-menu{
+  .quick-menu {
     width: 9%;
   }
 }
@@ -684,7 +684,7 @@ img {
   .screen-wrap {
     margin-top: 65%;
   }
-  .quick-menu{
+  .quick-menu {
     width: 12%;
   }
 }
